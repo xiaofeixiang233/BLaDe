@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "balrog": {
+      "url": "https://codeload.github.com/balrog-ai/BALROG/tar.gz/b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5",
+      "sha256": "368e056a4ae71a83530b1444c51116d5080faf23a549afaa94252144b403ae63",
+      "revision": "b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5",
+      "folder": "BALROG-b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5"
+    },
+    "minigrid": {
+      "url": "https://codeload.github.com/BartekCupial/Minigrid/tar.gz/cf73dd148e51276bd675a37e3bfb0bf2b42329b2",
+      "sha256": "b03f922fe8e875f4081082756c212e77cb392a59c917e6a5f1eda0d5f07680e9",
+      "revision": "cf73dd148e51276bd675a37e3bfb0bf2b42329b2",
+      "folder": "Minigrid-cf73dd148e51276bd675a37e3bfb0bf2b42329b2"
+    },
+    "baba": {
+      "url": "https://codeload.github.com/nacloos/baba-is-ai/tar.gz/40ae1b29dbc67f2ecea06cc161ed5ca51719e5e3",
+      "sha256": "a674b5c14925e2701b78fe0f1d93445019ceadd120ab6dfce2415e9019d4d613",
+      "revision": "40ae1b29dbc67f2ecea06cc161ed5ca51719e5e3",
+      "folder": "baba-is-ai-40ae1b29dbc67f2ecea06cc161ed5ca51719e5e3"
+    },
+    "crafter": {
+      "url": "https://codeload.github.com/danijar/crafter/tar.gz/e04542a2159f1aad3d4c5ad52e8185717380ee3a",
+      "sha256": "cd9f7d358ade4e1efa79e16d29f66fa8eba580350eb8036b5da62eadbc718038",
+      "revision": "e04542a2159f1aad3d4c5ad52e8185717380ee3a",
+      "folder": "crafter-e04542a2159f1aad3d4c5ad52e8185717380ee3a"
+    },
+    "minihack": {
+      "url": "https://codeload.github.com/BartekCupial/minihack/tar.gz/3ecb6da4eadcac7a4dbc5f8e801ccf636e34d7ec",
+      "sha256": "c875b796f4a41f63521f1558bd2891693ebaf9aa8943db3d3393d6870e2293b3",
+      "revision": "3ecb6da4eadcac7a4dbc5f8e801ccf636e34d7ec",
+      "folder": "minihack-3ecb6da4eadcac7a4dbc5f8e801ccf636e34d7ec"
+    },
+    "balrog_nle": {
+      "url": "https://files.pythonhosted.org/packages/74/3d/a1a258ec07611cd48a25955b6537d63a8afb2db1b1fa7fc436b3878c5b8d/balrog_nle-0.9.0.tar.gz",
+      "sha256": "10cd24d8483353ceb58c8c817d5134bc6edd60017a0f71dc465031bfeb66b957",
+      "revision": "0.9.0",
+      "folder": "balrog_nle-0.9.0"
+    },
+    "boxoban": {
+      "url": "https://codeload.github.com/deepmind/boxoban-levels/tar.gz/78011d8c86ad423bfb2e1005012393b4c3c24409",
+      "sha256": "3efffcd0c555f90e156a345d4bf2ae94a600be5afe6c5edb2fb7c78a119da242",
+      "revision": "78011d8c86ad423bfb2e1005012393b4c3c24409",
+      "folder": "boxoban-levels-78011d8c86ad423bfb2e1005012393b4c3c24409"
+    }
+  },
+  "balrog_files_sha256": {
+    "balrog/config/config.yaml": "f6af7a94e782a3d9ef88cec2f5b5f2b6ff8ca9e3e1ca5701161f43611a11705d",
+    "balrog/environments/__init__.py": "42a6cfcf4eef11d1cb5711cb4fbddf9b4f1e484799242c94f30088c191ab56fc",
+    "balrog/environments/env_wrapper.py": "a2bb22fc891f4908a5f2a5336cb57b7e1c300e0b9ca06b0c75728c419bf269af",
+    "balrog/environments/babyai_text/clean_lang_wrapper.py": "d2ab26a6e1f03c25f09d61624066f9b0db166e345a9e0e1bc47c366a6c95bca8",
+    "balrog/environments/babyai_text/__init__.py": "f969414fff56063f8badd06fa395c3cfab94744aabd25f9da3a8dc7ca5a4b5bd",
+    "balrog/environments/babaisai/base.py": "2aa14bd7bb1f8eb8b7b9449ddf4960eccc22e90a82660f267130b094fca263e2",
+    "balrog/environments/babaisai/__init__.py": "efbfcbc35e37c220d116a1d935c4e73aab51a23f3e57a4ec036c967aa4b81714",
+    "balrog/environments/minihack/minihack_env.py": "61f9e89a9ef0c982f0c78fdd889ec3411d07c55b38e3e00d8f797a23f7ac7b8b",
+    "balrog/environments/minihack/__init__.py": "7336788939e8f1ca45888c7149643b0b1884dba45062b98241ff5767bc00e81d",
+    "balrog/environments/nle/base.py": "14b98151ee05695f4e7fe3f021bb95a9a487f52931a80ca9cb36696c1832e82b",
+    "balrog/environments/nle/__init__.py": "af92aae435043129439904c387359c7eba10f9f27e8b43f1225595aad4bbf42a",
+    "balrog/environments/nle/nle_env.py": "707b00850bb370152cd10424ab955b46bf4c6c69030ea7d7a616ef581336385b",
+    "balrog/environments/nle/auto_more.py": "a2bfc7ba43d34e0ffec7473081041deb4f452ca78b9e6b398cb5aef359eac432",
+    "balrog/environments/nle/progress.py": "7c267bd24c9a78a15176b53738849cb9ce480849c031c6a77021869e0f5aa8f2",
+    "balrog/environments/wrappers/nle_timelimit.py": "2c34e3ab0d99659253ac9a3f614b77b7cc5051b0bd27ae648a442156bad802d5",
+    "balrog/environments/wrappers/gym_compatibility.py": "957ac20cae50180d4d23bbdd58a5c1c92ba8715eb06f82ee3a16f3be88a38e49",
+    "balrog/environments/crafter/env.py": "99d9da1b4858322ca5a821c14964c4290acff55c9b046e4901f9f266575e5d9e",
+    "balrog/environments/crafter/__init__.py": "82b545b80394a8564b4d0455886157c9f3d48d37067ee9d4a402ba6336a171eb"
+  },
+  "baba_tasks": [
+    "env/make_win-distr_obj_rule",
+    "env/goto_win-distr_obj_rule",
+    "env/goto_win",
+    "env/goto_win-distr_obj",
+    "env/goto_win-distr_rule",
+    "env/goto_win-distr_obj-irrelevant_rule",
+    "env/make_win-distr_obj",
+    "env/make_win-distr_rule",
+    "env/make_win",
+    "env/make_win-distr_obj-irrelevant_rule",
+    "env/two_room-goto_win",
+    "env/two_room-goto_win-distr_obj_rule",
+    "env/two_room-goto_win-distr_rule",
+    "env/two_room-goto_win-distr_obj",
+    "env/two_room-goto_win-distr_obj-irrelevant_rule",
+    "env/two_room-goto_win-distr_win_rule",
+    "env/two_room-break_stop-goto_win-distr_obj_rule",
+    "env/two_room-break_stop-goto_win-distr_obj",
+    "env/two_room-break_stop-goto_win-distr_rule",
+    "env/two_room-break_stop-goto_win-distr_obj-irrelevant_rule",
+    "env/two_room-break_stop-goto_win",
+    "env/two_room-maybe_break_stop-goto_win-distr_obj_rule",
+    "env/two_room-maybe_break_stop-goto_win",
+    "env/two_room-maybe_break_stop-goto_win-distr_obj",
+    "env/two_room-maybe_break_stop-goto_win-distr_rule",
+    "env/two_room-maybe_break_stop-goto_win-distr_obj-irrelevant_rule",
+    "env/two_room-make_win-distr_obj_rule",
+    "env/two_room-make_win-distr_rule",
+    "env/two_room-make_win",
+    "env/two_room-make_win-distr_obj-irrelevant_rule",
+    "env/two_room-make_win-distr_obj",
+    "env/two_room-make_win-distr_win_rule",
+    "env/two_room-break_stop-make_win-distr_obj_rule",
+    "env/two_room-break_stop-make_win-distr_rule",
+    "env/two_room-break_stop-make_win",
+    "env/two_room-break_stop-make_win-distr_obj-irrelevant_rule",
+    "env/two_room-break_stop-make_win-distr_obj",
+    "env/two_room-make_you",
+    "env/two_room-make_you-make_win",
+    "env/two_room-make_wall_win"
+  ],
+  "seed_protocol": "Task-major fixed consecutive seeds, base 20271014; paper task counts and native caps, not exact original paper seeds."
+}

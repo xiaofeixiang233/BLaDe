@@ -1,0 +1,2 @@
+# Python3.12. No GPU libraries are required by the experiment coordinator.
+tiktoken==0.12.0

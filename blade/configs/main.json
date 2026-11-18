@@ -1,0 +1,202 @@
+{
+  "version": "blade-main-v1",
+  "methods": [
+    "jev-flat-h0",
+    "jev-w2",
+    "jev-w05",
+    "d3-flat-h0",
+    "d3-w2",
+    "d3-w05",
+    "kev-flat-h0",
+    "kev-w2",
+    "kev-w05",
+    "jev-history-h4",
+    "jev-joint-h4",
+    "d3-history-h4",
+    "d3-joint-h4"
+  ],
+  "environments": [
+    "babyai",
+    "minihack",
+    "babaisai",
+    "alfworld"
+  ],
+  "profile": "paper",
+  "seed_start": 20271014,
+  "output": "../../outputs/main",
+  "runtime_root": "../.runtime",
+  "native_runtimes": {},
+  "workers": 4,
+  "history_length": 4,
+  "warmup_actions": 8,
+  "decision_caps": {
+    "crafter": 2000
+  },
+  "epsilon": 1e-06,
+  "max_goals": {
+    "babyai": 4,
+    "minihack": 4,
+    "babaisai": 4,
+    "crafter": 8,
+    "alfworld": 4
+  },
+  "credentials_file": null,
+  "providers": {
+    "jev": {
+      "model": "jev-1.13.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "timeout_seconds": 300,
+      "max_input_tokens": 32768,
+      "prices_per_million": {
+        "input": 0.042,
+        "output": 0
+      }
+    },
+    "gpt": {
+      "model": "gpt-6-sol",
+      "endpoint": "https://api.openai.com/v1/responses",
+      "reasoning_effort": "medium",
+      "service_tier": "default",
+      "timeout_seconds": 300,
+      "max_prompt_tokens": 32768,
+      "max_output_tokens": 4096,
+      "prices_per_million": {
+        "input": 2.5,
+        "cached_input": 0.2,
+        "output": 10
+      }
+    },
+    "d3": {
+      "model": "d3",
+      "repo_id": "vllm-sr/d3",
+      "revision": "cbff3a3cb0b074b6585fe9f747b9f9f5557a0e75",
+      "model_sha256": "0e439bebbbbf80d9e1b601c56c55a6fc3a6502b4e396cbbb5f3c3f3acc1d607b",
+      "endpoint": "http://127.0.0.1:8902/v1/systemone",
+      "timeout_seconds": 300,
+      "max_input_tokens": 32768,
+      "runtime_identity": {
+        "format_id": "d3-code-readout-v1",
+        "attention_mode": "noncausal_full_attention",
+        "dtype": "bfloat16",
+        "readout_dtype": "float32",
+        "temperature": 1.0,
+        "fast_path": false,
+        "permutation_average": false,
+        "text_only": true,
+        "versions": {
+          "torch": "2.8.0+cu126",
+          "transformers": "5.17.0",
+          "accelerate": "1.13.0",
+          "safetensors": "0.8.0",
+          "huggingface-hub": "1.33.0",
+          "flash-linear-attention": "0.5.2"
+        },
+        "kernels": {
+          "causal_conv1d_fn": "causal_conv1d.causal_conv1d_interface.causal_conv1d_fn",
+          "fla": "0.5.2",
+          "torch_chunk_gated_delta_rule": "fla.ops.gated_delta_rule.chunk.chunk_gated_delta_rule"
+        }
+      },
+      "endpoints": [
+        "http://127.0.0.1:8902/v1/systemone",
+        "http://127.0.0.1:8903/v1/systemone",
+        "http://127.0.0.1:8904/v1/systemone",
+        "http://127.0.0.1:8905/v1/systemone"
+      ]
+    },
+    "kev": {
+      "model": "kev-latest",
+      "repo_id": "jaredpalmer/kev-27b",
+      "revision": "28be62e9c5ae0471bda2b7c636a55224b4f4b887",
+      "source_revision": "6b719c3c3f367295f6ef336f4f751cf5ff970abc",
+      "head_sha256": "7968f17b03479c1ef9d1c0f3ab8a15e31ecb441cf40691b07ee945ab554d45ad",
+      "endpoint": "http://127.0.0.1:8906/v1/systemone",
+      "endpoints": [
+        "http://127.0.0.1:8906/v1/systemone"
+      ],
+      "timeout_seconds": 300,
+      "max_input_tokens": 65536,
+      "runtime_identity": {
+        "format_id": "kev-systemone-native-v2",
+        "dtype": "bfloat16",
+        "backend": "torch",
+        "temperature_published": 1.32,
+        "date_facts": false,
+        "truncate_states": false,
+        "cuda_graphs": false,
+        "fused": false,
+        "weights": "full",
+        "verification": "all_manifest_files_verified",
+        "max_options": 255
+      }
+    }
+  },
+  "budgets": {
+    "jev_usd": null,
+    "gpt_usd": null
+  },
+  "ablation_actors": [
+    "jev",
+    "d3"
+  ],
+  "alfworld": {
+    "data_root": "../.runtime/upstream/alfworld-data",
+    "split": "valid_unseen",
+    "expected_cases": 134,
+    "horizon": 50,
+    "action_interface": "native_admissible_commands",
+    "native_menu_authorized": true
+  },
+  "credential_slots": {
+    "jev": "jev-primary",
+    "gpt": "gpt-primary",
+    "d3": "local-d3",
+    "kev": "local-kev"
+  },
+  "execution_scope": {
+    "babyai": [
+      "jev-flat-h0",
+      "jev-w2",
+      "jev-w05",
+      "d3-flat-h0",
+      "d3-w2",
+      "d3-w05",
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05"
+    ],
+    "minihack": [
+      "jev-flat-h0",
+      "jev-w2",
+      "jev-w05",
+      "d3-flat-h0",
+      "d3-w2",
+      "d3-w05",
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05"
+    ],
+    "babaisai": [
+      "jev-flat-h0",
+      "jev-w2",
+      "jev-w05",
+      "d3-flat-h0",
+      "d3-w2",
+      "d3-w05",
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05"
+    ],
+    "alfworld": [
+      "jev-flat-h0",
+      "jev-w2",
+      "jev-w05",
+      "d3-flat-h0",
+      "d3-w2",
+      "d3-w05",
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+# Install matching torch/torchvision CUDA wheels before this file; see README.
+transformers==5.17.0
+accelerate==1.13.0
+safetensors==0.8.0
+huggingface-hub==1.33.0
+flash-linear-attention==0.5.2
+einops==0.8.2
+pillow==12.3.0
+numpy==2.5.3
+
+# Build support for the separately installed causal-conv1d CUDA extension.
+ninja
+packaging
+psutil

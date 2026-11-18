@@ -1,0 +1,76 @@
+{
+  "http://127.0.0.1:8906/v1/systemone": {
+    "repo_id": "jaredpalmer/kev-27b",
+    "revision": "28be62e9c5ae0471bda2b7c636a55224b4f4b887",
+    "source_revision": "6b719c3c3f367295f6ef336f4f751cf5ff970abc",
+    "head_sha256": "7968f17b03479c1ef9d1c0f3ab8a15e31ecb441cf40691b07ee945ab554d45ad",
+    "format_id": "kev-systemone-native-v2",
+    "checkpoint_manifest_sha256": "249207463cd095146f8a6792a0e89399fb01756c63e37aee1a179e9625002f6b",
+    "verification": "all_manifest_files_verified",
+    "weights": "full",
+    "dtype": "bfloat16",
+    "temperature_published": 1.32,
+    "max_state_tokens": 65536,
+    "max_row_tokens": 73728,
+    "max_options": 255,
+    "date_facts": false,
+    "truncate_states": false,
+    "temperature": 1.319507910772894,
+    "backend": "torch",
+    "device": "cuda",
+    "cuda_graphs": false,
+    "fused": false,
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "compute_capability": [
+      8,
+      0
+    ],
+    "versions": {
+      "torch": "2.8.0",
+      "transformers": "5.17.0",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "1.32.0",
+      "flash-linear-attention": null,
+      "causal-conv1d": null,
+      "triton": "3.4.0"
+    }
+  },
+  "http://127.0.0.1:8907/v1/systemone": {
+    "repo_id": "jaredpalmer/kev-27b",
+    "revision": "28be62e9c5ae0471bda2b7c636a55224b4f4b887",
+    "source_revision": "6b719c3c3f367295f6ef336f4f751cf5ff970abc",
+    "head_sha256": "7968f17b03479c1ef9d1c0f3ab8a15e31ecb441cf40691b07ee945ab554d45ad",
+    "format_id": "kev-systemone-native-v2",
+    "checkpoint_manifest_sha256": "249207463cd095146f8a6792a0e89399fb01756c63e37aee1a179e9625002f6b",
+    "verification": "all_manifest_files_verified",
+    "weights": "full",
+    "dtype": "bfloat16",
+    "temperature_published": 1.32,
+    "max_state_tokens": 65536,
+    "max_row_tokens": 73728,
+    "max_options": 255,
+    "date_facts": false,
+    "truncate_states": false,
+    "temperature": 1.319507910772894,
+    "backend": "torch",
+    "device": "cuda",
+    "cuda_graphs": false,
+    "fused": false,
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "compute_capability": [
+      8,
+      0
+    ],
+    "versions": {
+      "torch": "2.8.0",
+      "transformers": "5.17.0",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "1.32.0",
+      "flash-linear-attention": null,
+      "causal-conv1d": null,
+      "triton": "3.4.0"
+    }
+  }
+}

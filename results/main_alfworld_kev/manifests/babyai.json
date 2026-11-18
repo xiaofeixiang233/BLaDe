@@ -1,0 +1,4188 @@
+{
+  "environment": "babyai",
+  "source_identity": {
+    "wrappers": {
+      "balrog_revision": "b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5",
+      "source_files_sha256": {
+        "balrog/config/config.yaml": "f6af7a94e782a3d9ef88cec2f5b5f2b6ff8ca9e3e1ca5701161f43611a11705d",
+        "balrog/environments/__init__.py": "42a6cfcf4eef11d1cb5711cb4fbddf9b4f1e484799242c94f30088c191ab56fc",
+        "balrog/environments/env_wrapper.py": "a2bb22fc891f4908a5f2a5336cb57b7e1c300e0b9ca06b0c75728c419bf269af",
+        "balrog/environments/babyai_text/clean_lang_wrapper.py": "d2ab26a6e1f03c25f09d61624066f9b0db166e345a9e0e1bc47c366a6c95bca8",
+        "balrog/environments/babyai_text/__init__.py": "f969414fff56063f8badd06fa395c3cfab94744aabd25f9da3a8dc7ca5a4b5bd",
+        "balrog/environments/babaisai/base.py": "2aa14bd7bb1f8eb8b7b9449ddf4960eccc22e90a82660f267130b094fca263e2",
+        "balrog/environments/babaisai/__init__.py": "efbfcbc35e37c220d116a1d935c4e73aab51a23f3e57a4ec036c967aa4b81714",
+        "balrog/environments/minihack/minihack_env.py": "61f9e89a9ef0c982f0c78fdd889ec3411d07c55b38e3e00d8f797a23f7ac7b8b",
+        "balrog/environments/minihack/__init__.py": "7336788939e8f1ca45888c7149643b0b1884dba45062b98241ff5767bc00e81d",
+        "balrog/environments/nle/base.py": "14b98151ee05695f4e7fe3f021bb95a9a487f52931a80ca9cb36696c1832e82b",
+        "balrog/environments/nle/__init__.py": "af92aae435043129439904c387359c7eba10f9f27e8b43f1225595aad4bbf42a",
+        "balrog/environments/nle/nle_env.py": "707b00850bb370152cd10424ab955b46bf4c6c69030ea7d7a616ef581336385b",
+        "balrog/environments/nle/auto_more.py": "a2bfc7ba43d34e0ffec7473081041deb4f452ca78b9e6b398cb5aef359eac432",
+        "balrog/environments/nle/progress.py": "7c267bd24c9a78a15176b53738849cb9ce480849c031c6a77021869e0f5aa8f2",
+        "balrog/environments/wrappers/nle_timelimit.py": "2c34e3ab0d99659253ac9a3f614b77b7cc5051b0bd27ae648a442156bad802d5",
+        "balrog/environments/wrappers/gym_compatibility.py": "957ac20cae50180d4d23bbdd58a5c1c92ba8715eb06f82ee3a16f3be88a38e49",
+        "balrog/environments/crafter/env.py": "99d9da1b4858322ca5a821c14964c4290acff55c9b046e4901f9f266575e5d9e",
+        "balrog/environments/crafter/__init__.py": "82b545b80394a8564b4d0455886157c9f3d48d37067ee9d4a402ba6336a171eb"
+      },
+      "native_revisions": {
+        "balrog": "b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5",
+        "minigrid": "cf73dd148e51276bd675a37e3bfb0bf2b42329b2",
+        "baba": "40ae1b29dbc67f2ecea06cc161ed5ca51719e5e3",
+        "crafter": "e04542a2159f1aad3d4c5ad52e8185717380ee3a",
+        "minihack": "3ecb6da4eadcac7a4dbc5f8e801ccf636e34d7ec",
+        "balrog_nle": "0.9.0",
+        "boxoban": "78011d8c86ad423bfb2e1005012393b4c3c24409"
+      },
+      "native_caps": {
+        "babyai": [
+          64,
+          128
+        ],
+        "minihack": 100,
+        "babaisai": 100,
+        "crafter": 2000,
+        "nle": 100000
+      },
+      "public_projection": "Complete original public text, no raw arrays/images/hidden state",
+      "menus": "Complete static native language menus; no state legality filter",
+      "compatibility_changes": [
+        "BabyAI constructor RNG fixes mission category before unchanged native reset.",
+        "Baba unused expert target_plan read omitted; original no-YOU reset retained with fresh public text serialization.",
+        "NLE selected 00..99 menu labels mechanically emit both literal digits; all native subactions retained."
+      ],
+      "custom_goal_completion_or_legality_checks": false,
+      "crafter_engine_modified": false,
+      "nle_calendar_caveat": "Pinned NLE retains native calendar events; paired initial public hashes must match."
+    },
+    "packages": {
+      "minigrid": "2.3.1",
+      "gymnasium": "1.2.0",
+      "numpy": "1.26.4"
+    },
+    "python": "3.12.15"
+  },
+  "actual_installation": {
+    "balrog_revision": "b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5",
+    "source_files_sha256": {
+      "balrog/config/config.yaml": "f6af7a94e782a3d9ef88cec2f5b5f2b6ff8ca9e3e1ca5701161f43611a11705d",
+      "balrog/environments/__init__.py": "42a6cfcf4eef11d1cb5711cb4fbddf9b4f1e484799242c94f30088c191ab56fc",
+      "balrog/environments/env_wrapper.py": "a2bb22fc891f4908a5f2a5336cb57b7e1c300e0b9ca06b0c75728c419bf269af",
+      "balrog/environments/babyai_text/clean_lang_wrapper.py": "d2ab26a6e1f03c25f09d61624066f9b0db166e345a9e0e1bc47c366a6c95bca8",
+      "balrog/environments/babyai_text/__init__.py": "f969414fff56063f8badd06fa395c3cfab94744aabd25f9da3a8dc7ca5a4b5bd",
+      "balrog/environments/babaisai/base.py": "2aa14bd7bb1f8eb8b7b9449ddf4960eccc22e90a82660f267130b094fca263e2",
+      "balrog/environments/babaisai/__init__.py": "efbfcbc35e37c220d116a1d935c4e73aab51a23f3e57a4ec036c967aa4b81714",
+      "balrog/environments/minihack/minihack_env.py": "61f9e89a9ef0c982f0c78fdd889ec3411d07c55b38e3e00d8f797a23f7ac7b8b",
+      "balrog/environments/minihack/__init__.py": "7336788939e8f1ca45888c7149643b0b1884dba45062b98241ff5767bc00e81d",
+      "balrog/environments/nle/base.py": "14b98151ee05695f4e7fe3f021bb95a9a487f52931a80ca9cb36696c1832e82b",
+      "balrog/environments/nle/__init__.py": "af92aae435043129439904c387359c7eba10f9f27e8b43f1225595aad4bbf42a",
+      "balrog/environments/nle/nle_env.py": "707b00850bb370152cd10424ab955b46bf4c6c69030ea7d7a616ef581336385b",
+      "balrog/environments/nle/auto_more.py": "a2bfc7ba43d34e0ffec7473081041deb4f452ca78b9e6b398cb5aef359eac432",
+      "balrog/environments/nle/progress.py": "7c267bd24c9a78a15176b53738849cb9ce480849c031c6a77021869e0f5aa8f2",
+      "balrog/environments/wrappers/nle_timelimit.py": "2c34e3ab0d99659253ac9a3f614b77b7cc5051b0bd27ae648a442156bad802d5",
+      "balrog/environments/wrappers/gym_compatibility.py": "957ac20cae50180d4d23bbdd58a5c1c92ba8715eb06f82ee3a16f3be88a38e49",
+      "balrog/environments/crafter/env.py": "99d9da1b4858322ca5a821c14964c4290acff55c9b046e4901f9f266575e5d9e",
+      "balrog/environments/crafter/__init__.py": "82b545b80394a8564b4d0455886157c9f3d48d37067ee9d4a402ba6336a171eb"
+    },
+    "native_revisions": {
+      "balrog": "b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5",
+      "minigrid": "cf73dd148e51276bd675a37e3bfb0bf2b42329b2",
+      "baba": "40ae1b29dbc67f2ecea06cc161ed5ca51719e5e3",
+      "crafter": "e04542a2159f1aad3d4c5ad52e8185717380ee3a",
+      "minihack": "3ecb6da4eadcac7a4dbc5f8e801ccf636e34d7ec",
+      "balrog_nle": "0.9.0",
+      "boxoban": "78011d8c86ad423bfb2e1005012393b4c3c24409"
+    },
+    "native_caps": {
+      "babyai": [
+        64,
+        128
+      ],
+      "minihack": 100,
+      "babaisai": 100,
+      "crafter": 2000,
+      "nle": 100000
+    },
+    "public_projection": "Complete original public text, no raw arrays/images/hidden state",
+    "menus": "Complete static native language menus; no state legality filter",
+    "compatibility_changes": [
+      "BabyAI constructor RNG fixes mission category before unchanged native reset.",
+      "Baba unused expert target_plan read omitted; original no-YOU reset retained with fresh public text serialization.",
+      "NLE selected 00..99 menu labels mechanically emit both literal digits; all native subactions retained."
+    ],
+    "custom_goal_completion_or_legality_checks": false,
+    "crafter_engine_modified": false,
+    "nle_calendar_caveat": "Pinned NLE retains native calendar events; paired initial public hashes must match.",
+    "actual_package_versions": {
+      "numpy": "1.26.4",
+      "gym": "0.25.0",
+      "gymnasium": "1.2.0",
+      "Pillow": "11.3.0",
+      "minigrid": "2.3.1"
+    },
+    "actual_native_files_sha256": {
+      "minigrid/__init__.py": "353c19e7e0e33487472155d8a61ee351b1413a327df463098daee16fdbee3c93",
+      "minigrid/benchmark.py": "34ab84070b99c4a54439453d460f15358e377b6f318c801b2598eb96a46eac36",
+      "minigrid/core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "minigrid/core/actions.py": "787274f08bc91a76dba83b322ff5ee8fdb8ea7843cb706a1b5371029ac234e28",
+      "minigrid/core/constants.py": "5e82c8765064461001b8a5e07b2c5f693ce65297418755a11d7917dacbd204ac",
+      "minigrid/core/grid.py": "56bc6829d15206e45702c249616682c0acfa7fdab4ab346d84b05eb09dbf82b0",
+      "minigrid/core/mission.py": "c88eb0267593a3c522d9f5798529bbe9a102bc8a81e9f1a492c7073f1058cc88",
+      "minigrid/core/roomgrid.py": "a6cebd1c2cec45ee61a1de21f53474b8660d33a5f642aa6916e8f522af30a3cf",
+      "minigrid/core/world_object.py": "f60793fd1fcaa58f373a7a8773261821b0fe0a86461412abbedd2a64ea65757d",
+      "minigrid/envs/__init__.py": "828c7b5dd9e59ec312490664e9a0fa772e23570bd4380b1bc6fdaf827a6faac8",
+      "minigrid/envs/babyai/__init__.py": "a05908b272f59445dafe847f3ba12b3541932f1d43748377affe8539aaa8845e",
+      "minigrid/envs/babyai/core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "minigrid/envs/babyai/core/levelgen.py": "edab41b045720c6fc66da52c53d82a550f221f1b5c91508b2ff1a34e07e03d00",
+      "minigrid/envs/babyai/core/roomgrid_level.py": "e13b27552d30eab2859f9832ccfd8eb1fb9deac2e147b50da709d78e58e0043a",
+      "minigrid/envs/babyai/core/verifier.py": "dbb8503da4d5ca1c89c36f15f3b47d66d5b7fd8749a1a5cb31f7ee436cc2c7da",
+      "minigrid/envs/babyai/goto.py": "10df049cb708758c76dc4ca5cfee6166d5e8219539845fc101b06744d935e89a",
+      "minigrid/envs/babyai/mixed_seq_levels.py": "becbed12ef2ea3f1c395039223553218254cd9646f07854aeac4a8cd58fed3a9",
+      "minigrid/envs/babyai/open.py": "958bbf1cf9eabc98bb66169e113379585d3846b19019b8169e8d0ff63387274e",
+      "minigrid/envs/babyai/other.py": "a17323d89233b77cf2c96286fbb4071fbb063a7193141f39576790d9d17c5e57",
+      "minigrid/envs/babyai/pickup.py": "bb2ce891427ddcc3ecf79e5289d00e5b0362cc7e4427bfb40b6df611566fea27",
+      "minigrid/envs/babyai/putnext.py": "75f6f406c49ad3ae4eebfb34dd8b007da4a1788a0cf3262b7b0cf0df66a39bd6",
+      "minigrid/envs/babyai/synth.py": "73fe88780cefbf5461a5f472e036eba379f81115f375a36c620ccfaae5835a2f",
+      "minigrid/envs/babyai/unlock.py": "cb8d343b8e7de0349f74f5a1cc68ad823f3aa4f40ebf32b0b5c7d361beba2906",
+      "minigrid/envs/blockedunlockpickup.py": "bc25c6f066a3658b127fad0ed8a94e13b7e11ff5d90c977d6499c55e62600b3b",
+      "minigrid/envs/crossing.py": "86384986c98a60dbaa0d85b649afa4bf1454c219b699279abe734c7665427926",
+      "minigrid/envs/distshift.py": "7515be76a424db0c138bd5327a8cd43129ecaa79b8e71f6869bc3ce6bb5f0ddc",
+      "minigrid/envs/doorkey.py": "b2802d8e98e9c99d54a6bbf4c04d7047cb8e0c4a3150b186bba8f4defb20114c",
+      "minigrid/envs/dynamicobstacles.py": "8e21d19bea8248afe86dff0dc5bc4a94ca6a633f79ca7841a0c8f1d7609f6fc0",
+      "minigrid/envs/empty.py": "9daabf330a51023f5fe2a8884b9b6b26482ee489cbee68604712271e818e5ae6",
+      "minigrid/envs/fetch.py": "051afb13eea460bc0238e458239d887253c49a80459d0522523479fd776e1795",
+      "minigrid/envs/fourrooms.py": "5bd041f66bd3f716d487d2edaf1470d912b38bf44e3e5ff6df4dd3786db1a58d",
+      "minigrid/envs/gotodoor.py": "08b9f9fabd8e4bfe0ab8ac966ac392fd997e9bdd81da6a783180f2619c2a232f",
+      "minigrid/envs/gotoobject.py": "6018e7e494fbbe93ef181f57cab8962125fcd71d4eb953b464f502e1864fe48b",
+      "minigrid/envs/keycorridor.py": "9542b175a59921dcff0e4a8a3c38cfad86c1a217965f78c270c8e758df4c692e",
+      "minigrid/envs/lavagap.py": "ba673d149cab22c9b89705b2dc4e33442ae8cfe1c65c1ccb925c4c188529546d",
+      "minigrid/envs/lockedroom.py": "25569a60b737df29e8d94ba6b477ff77f756975f98dc38158627a655fcae54bc",
+      "minigrid/envs/memory.py": "d208b6b0cfb20a8ed00d55a0ea6012697f2a0da0e54e4da7d8378eb1da52df8c",
+      "minigrid/envs/multiroom.py": "e7a53b25c404ab98b249b0a40a3a8c3fd44eba88b37a2ab122444e82c3b099f6",
+      "minigrid/envs/obstructedmaze.py": "6fd7b2a985fa83fcd9988c7c57bc8316fb489d7a777ad59443b1d0ce084feb3b",
+      "minigrid/envs/obstructedmaze_v1.py": "6bd2e9f0ae4ff934124673862e4eebf0bacd2235367b8c56fd2cdaa017b21ede",
+      "minigrid/envs/playground.py": "be546b1d7dfa6b99cb2cc7e6118e887fb928e43fad4ffdf237c10d693b6aabee",
+      "minigrid/envs/putnear.py": "84510b54873c3a276ea2f605fdbea4917fb5cdcb5fe1ab7ebd3a266f9a0121c4",
+      "minigrid/envs/redbluedoors.py": "2b9c14f7a839fc2106ed598d1a82265aa82e0554d7e6613e13f0d382413e36a6",
+      "minigrid/envs/unlock.py": "3ffb3a5d0d15205a9d44fb15af0cd34d98fe93ef93389d826abf1213a42486f4",
+      "minigrid/envs/unlockpickup.py": "2727f3cfca82eb5c18feaba240118432a76b0f9fbaff3ff51010f554b25ac240",
+      "minigrid/envs/wfc/__init__.py": "676649a1a64fb4685f82f0a37f5c89b92e56ef85422acb13b71127a65b4ff1c5",
+      "minigrid/envs/wfc/config.py": "92fa3cd59915dc43904ed95308af5e8efbcbf6699949573adf0de15c59b262d2",
+      "minigrid/envs/wfc/graphtransforms.py": "53666594949107163c2fe5933b07e46fba1e72ecdf09920ffb37106dc320673a",
+      "minigrid/envs/wfc/wfcenv.py": "aac9f26d978aba88f48af2a7e5fc75eb29bc33e6d817615ab85241d6c73abed3",
+      "minigrid/envs/wfc/wfclogic/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "minigrid/envs/wfc/wfclogic/adjacency.py": "d1ed6e22f619a8c0d05bf507543f9d594246fac375b73e5a33710dc538602824",
+      "minigrid/envs/wfc/wfclogic/control.py": "7cc0f37c80db4bb9ac9de393d4111f62ea6d3217b1b55fdda6ccb1836f7c3aee",
+      "minigrid/envs/wfc/wfclogic/patterns.py": "142676346e084554068b146c9305efed8dc33b621e76cf86b006fb6e90109a52",
+      "minigrid/envs/wfc/wfclogic/solver.py": "7264b8d7066a56bd6ebf5ac4dc6e0136314700959965a21d6b33a0348ab2075d",
+      "minigrid/envs/wfc/wfclogic/tiles.py": "6464fc96ac984ed5655054e6d2fc782129161e30dcd3b9348d66c37b228d2317",
+      "minigrid/envs/wfc/wfclogic/utilities.py": "8891b639928ab44a381b87132cd77782fc96f15c4382c395c5b9e4bea2a70e1c",
+      "minigrid/manual_control.py": "9e7f5f885763cc8ef0f2bda58fdcfef97ef799b000ab11adc98f5e1864168396",
+      "minigrid/minigrid_env.py": "d05ea6ac7479b7c4c9a13b7fab6b541c66ad857c34834d13345a665fc0f96848",
+      "minigrid/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "minigrid/utils/baby_ai_bot.py": "042c9686bc29d4d5ace0f8980527092549215be5b34c6407eb72c4baf6e5b953",
+      "minigrid/utils/rendering.py": "4ee8aecb0983154b7f40913cb9b908ec7ef29ec92f8ee5ce76a8a263ce244078",
+      "minigrid/wrappers.py": "248021f4f5b3090d759ff56e7bd1865995240e6b0ebc360169d8c992734b2f77"
+    }
+  },
+  "cases": [
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271014",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271014,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271014",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "5ffe54022cc4c39741b3aa13e13f23df958d6a577b577a5803818d82ae34caca",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271015",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271015,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271015",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "517cd169df0dcc997ae7c8ffeca9f6204873920a087d8aec31859c38b2a56967",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271016",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271016,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271016",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "547d59c3a513978b6f232c2bad62c343b4c95494b5b62a8eac86f496a90537a4",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271017",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271017,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271017",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "0e99dc168fa1af6fa4f3642076b7a1b61789cc931dcd7c5884bd72e9f343a0f5",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271018",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271018,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271018",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "2360436c167391675a2c6ce81b29671fd008ff61d108aee155cc81707732d3e2",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271019",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271019,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271019",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "c879c63e04e2e9d54ff4bcdfb1acc22aad8440d1e3b9de7e15f9ea35623bb6d3",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271020",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271020,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271020",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "24252f98d3e6c99d099c982371fd92d17d7daf50d8a4794ce55efbacd4dbf1e7",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271021",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271021,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271021",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "40cf91a60fc31fc7cc37293cedd8c23bc32d7e6da26da8cdf82ee2b69a34f989",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271022",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271022,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271022",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "439740f8d9c3916647a1d6af7c2b7ac12a5a912ab32b8fbe1ba76648276aefbe",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271023",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271023,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271023",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "3fb03ef44c79c2adfa07c83d63c494a588c8e4538935c8f7197269a703b8b758",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271024",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271024,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271024",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "ae2d4bca5310ecd35798b8bde55e2dcd8161ad4957faff5326c9e3531c9e8281",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271025",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271025,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271025",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "f5d07f3fb7aa75b764277f7ea68a28b651e3dc5cdbd19a49e8d3f20d60c31ae9",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271026",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271026,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271026",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "5d804b7897beb50837d50fcc7331686ea84fd501dc5472d732980708bfd19279",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271027",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271027,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271027",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "2f29fe206468ad8eca24b857bb963607bef859a0d65cf42ea100a530282c7009",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271028",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271028,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271028",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "cf490a51dee7d3d737c7b0764cf9328c57cb3e9c2df3d4cde71d923b2214fe8e",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271029",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271029,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271029",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "69e430aedf3ee38425e5e3fe94d76584aa1e06309507d3f1e5dfa1339c0ce999",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271030",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271030,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271030",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "4fd023dfa421f5b83ecca59f4ce511aa6e538faa8d14185b85c396b6770ebbf8",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271031",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271031,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271031",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e2a794b6b6baa38d3a1d3edcd6c624946e3deb7e3b12ba58e608d30bc25ba60c",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271032",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271032,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271032",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "038d92e4c76ed56411730ecb84b83b011929f280e8be3b69b5dde36892a7de08",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271033",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271033,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271033",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "dc6a1f1a30f4510c137c515baa2e935a8d0259bf1c8854bc77f540be8e3276d4",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271034",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271034,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271034",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "2813f14107aec1312aae781952599ef0a88b908fe7ce7f28a2f7d6f093b6e7e2",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271035",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271035,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271035",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "9887707c834196048d66844ae754c373a0d646143580d6d6c4614942a85c0a1f",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271036",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271036,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271036",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "8fb24ec5bccca86ab85d9ae677ee7028e69ac261f1de28e91e0ba1cc2ef61426",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271037",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271037,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271037",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "d888c53ef14d7271cd8140d5b7665ca2d2d8c5b7bd34572004145375531e1596",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/goto/20271038",
+        "environment": "babyai",
+        "task": "goto",
+        "task_type": "goto",
+        "seed": 20271038,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/goto/20271038",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "1b5ae5babb3d1fe929b096a8ad961534ece467ece24be09e033470ecd7304732",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271014",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271014,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271014",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "4b356baa17bfe699bddb3643b1cd0380130caed780dce0c5c7fb4deb858efd67",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271015",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271015,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271015",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "0285e8f675e20a8b9f444715015c25893b71899d27da437dc5a942825484f38a",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271016",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271016,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271016",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e289fcc1cacc8f636c95c3b949790f44e9e8e2fff9924dba66e445cd105556de",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271017",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271017,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271017",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "de791c67d42bd59396ecb9f755952df801782bd2b3f35c53ce9e66e4ea3735b2",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271018",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271018,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271018",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "a4e710247c0896398f95426c6a21883e6cc8ee790e9db207ed6644a2b424a527",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271019",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271019,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271019",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "01e3667d68b8e929db1f197f79c08409d11cfee52bd4e60e406d7af2621f5b25",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271020",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271020,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271020",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "89ebd6daf715ee557b3d7e1f6deda057f4fe8402a990c5d30ab519e092c1ea60",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271021",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271021,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271021",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "de545c5c0a7e6fae78df45af104fa76156fb41acff38286e7cfb148d0584ed72",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271022",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271022,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271022",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "be6fb05f6e283b53535c6c160d882f587cb57eb68fc13a7c277aad3a1c306195",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271023",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271023,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271023",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "a941a0c4c4eed9251bec1e1f977877025185562ccf1b0f6dbc9bde6db09c0956",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271024",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271024,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271024",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "dad0006eb6874c959af02d90ce6431d754a37f17af5b8b9dfcce4db341117312",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271025",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271025,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271025",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "5b84d412e42b9b4533b3ee9ba1e455306af359426eab6de421ced700bb12b4cb",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271026",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271026,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271026",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "88e0222e81ad148921d6e312d40b25821410ad524770a21764f74803a3db5093",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271027",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271027,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271027",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e78070f54e92ef9ea79322a27f6bcc25cc6a3e5b51d892c8589ac91493deb91c",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271028",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271028,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271028",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "cca1dbab1f39c1702543e2fd5ae39ec486b1ba0e3625cb1c636b082e19714d02",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271029",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271029,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271029",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "20b93a9bed27f6b70a4f4f5e70799aba047022b8ac6b603a9325b4b7fceff965",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271030",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271030,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271030",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "1d1d8da716b608cac552b7337d1aeca80c35341ba495fe803b019965d72854b7",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271031",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271031,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271031",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "02ef36fe1f196d73644eebd23a89d92131da288dd7cea03df1f5185f549153a1",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271032",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271032,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271032",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "a536851165647f85781a505a3aa85d429ba4b59175cf6c7cfb2a07d65df3836d",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271033",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271033,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271033",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "8667c34be4c3f12f4a1fdb0201688e287ef79a82fd0ed057efc92d656dd71248",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271034",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271034,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271034",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "2687347db7c99aff938612f22931d4087247ca6782a6d540033876c8988e3a12",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271035",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271035,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271035",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "75d2122b96d152722bbc589a6a691456b39f48a36a04f417de4c816cff35f0b0",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271036",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271036,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271036",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "9dcb3ba964d20edcfaf3f564e1181524a7a2f8a4a7d8c60ee4a5b9ecbed6c53d",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271037",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271037,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271037",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "92df5063cbb8746e32a08e426dca6b03651b70b96f72e597baf947b0f638a16f",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pickup/20271038",
+        "environment": "babyai",
+        "task": "pickup",
+        "task_type": "pickup",
+        "seed": 20271038,
+        "profile": "paper",
+        "horizon": 64,
+        "group": "babyai/pickup/20271038",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "c5994e93e6d274ddb15443f5308a784c7c3b0999607becc7ffa1832c01c573f3",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 64,
+      "goal_slots": [
+        8,
+        22,
+        36,
+        50
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271014",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271014,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271014",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "c0d27e7cae59543348b9de68bea2c38499b053f11c0e3aa052e2ea0d7022091b",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271015",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271015,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271015",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "2ee69b32a7200d4979fdccf58ee579d03d0b1fdc224edce374ef1bb053222044",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271016",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271016,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271016",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "1b964bc70180c20a0e751ad7e29add0f0ec6698200fc004982c336ec921c2f1e",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271017",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271017,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271017",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "7fdc720d7d5d77dfb55f2d558c075fe9e8823846d366232195700d8dc1084610",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271018",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271018,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271018",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "68646371846fae8d2c0fb65fc3e59f54d0bae62df80553fa94149a1615f86904",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271019",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271019,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271019",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e0d0bcd7f6b5cfef67845b680dae01c763c4196f34bbe41bbae2af38e7e788cd",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271020",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271020,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271020",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e16f2dfa88ed13a8a3b6372f4a5a3d50766e91a9a94eddcb9706a8b9229bf37f",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271021",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271021,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271021",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "4a64a849b9eacd98a9c386c5c23802a0bbc832b1791f503e9fbcb93eeb91050a",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271022",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271022,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271022",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "2662a28abb047262a737ee5c0fbb5f40b48ab45c5c12cc204d8bdee07f87b19c",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271023",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271023,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271023",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "95816f23dd175a2de37424bf3213b40e268a4ebe035fe6bd969d95b3f66876c1",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271024",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271024,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271024",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "4a016631c6765dc71dcfa8d4f55d13da39e9c44d8e38e7cf36ecdf7291e7b549",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271025",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271025,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271025",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "ec408dc335b5947086bb6dc97635bebc865c07d375253596c4688f5fb87aa8fc",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271026",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271026,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271026",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "229ede521fbeaca5f0fada1d955dee539d9bd51350a0593e913fc3451a90fd43",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271027",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271027,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271027",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "95816f23dd175a2de37424bf3213b40e268a4ebe035fe6bd969d95b3f66876c1",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271028",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271028,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271028",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "ef4c8b431693e0b5b1cba03ff7ba5b4a3a2ac410b4eb7cd451cf1cecac42bd34",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271029",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271029,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271029",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "ef53bdabf1113d7d240f0df4c92351ae5e5a27410b4ce864d4dcae19eda8a266",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271030",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271030,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271030",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "08fbc7ccd3fc1f9619b58489000d2487120f1f513386dfd4288f7ddb981dbd29",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271031",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271031,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271031",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "15cc792ab0f907b9b6b975fe08a5b2ecd1617aa0edabcb54ffc08b8492d24d16",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271032",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271032,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271032",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "2effaf7805b8e14cf0ce3838cd96bf911b8426c531d241e425afdd37ae409f41",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271033",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271033,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271033",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "c6b0c6f3ecfea74b13db706f1b100e5097e146c734ba8f2395f1bf4cd44b92ae",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271034",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271034,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271034",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "02a879f0bb9f6ecbc8ffa17cf54f6ab3d06476256a7ce074a7ce0908e77861bc",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271035",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271035,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271035",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "181a2176c8948f19a2fc09e37847c1380001be6fb092e5261051f86a9009013c",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271036",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271036,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271036",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "07d5fa0faa51272f094a76f286b91421ed257cbd3bcfe87b8efae50c459c4b95",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271037",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271037,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271037",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "20cf112dd035606e06a3fb0225267e8b44e4a233107618f5ed5fde0d51c0e6c6",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/open/20271038",
+        "environment": "babyai",
+        "task": "open",
+        "task_type": "open",
+        "seed": 20271038,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/open/20271038",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "08d133cca1028dd4a920b27d0cfa9cc0622ee12e4f6cc21808f2d7a9d68c5841",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271014",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271014,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271014",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "afd9e564c7347c98a6d4f9561e2ef9cc9bc03000841701124d1ad45a85c8a2d3",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271015",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271015,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271015",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "2dc9b1fb89ef793751286ff18f4a269a175d5ad303df9ec0f66e80d65e796769",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271016",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271016,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271016",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "d8e49f232f5e4c423abd64db302983b379068b5414f966ba4194b74d146d3b93",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271017",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271017,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271017",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "17d1c5cc8e7ce32aa4374e4f3c618bed4bc30c1f341429bc696cda84c7f73911",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271018",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271018,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271018",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "3f25470de559daf189fbff864f8b312237a2a1f7004782b663535c274078576e",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271019",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271019,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271019",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "9614ce557daec23a25f1848172ada4975826009e75ae30b294167a0d09b2503d",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271020",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271020,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271020",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "b55f8cfaa641d13c2495a19e8b0333ea8ba6b8b4ffcd0c3771f205dcb4410831",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271021",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271021,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271021",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "3ff20faf4f40ed0b1507895ac0af2a70d9c0767758841f479b44af880b440121",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271022",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271022,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271022",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "8e9e28d5f67da1367daa0f946f2ca089823cb21378658d59798dcb7efe1ba10a",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271023",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271023,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271023",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e5a64f4530e057c01632c48c5288734d863a3dc576826f0234f8506ab3b915e3",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271024",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271024,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271024",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "0ce115de05ff6679f014c47c9c7e1313dcb17d39986c01fd84e165e9400cd85a",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271025",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271025,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271025",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e6453ce9586148edf7c2ef0b3fca7030dce64c3f48ddadb68a909341bcb937c0",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271026",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271026,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271026",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "96fc207f57e616beafd43adfa810c2cb581c5d6bc8969b772746640aedd65431",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271027",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271027,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271027",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "9a0daa21cedfa245ef41ce4f759bbbd177772f4970aaf25f313bd22ab2335e3b",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271028",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271028,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271028",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "57be5898e468d1aa930017da4b9bd064bef1e9c9a1b6d03872044fe503b050cf",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271029",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271029,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271029",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "8881ae3ea707085ef8a901101ec984217771e012b0f26e9f46e7ce9ab9f38248",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271030",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271030,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271030",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e26570b29adb0297bdf1e0501b9c123dc9f4b451bc259717d3e1cca59773c978",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271031",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271031,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271031",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "5cb233017d6a2aacf138e12ffb866c48e3b384fc8aed3f5182f41f7bf4e82edf",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271032",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271032,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271032",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "8881ae3ea707085ef8a901101ec984217771e012b0f26e9f46e7ce9ab9f38248",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271033",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271033,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271033",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "ab78265dee7b0ce4ff8a13e76c4024b82c2d63f08499c0318e79abc464778805",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271034",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271034,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271034",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "b66dfecc012a2aff4370a3a47ca9c2f2f3b2a274c0097aec527b43efd81b4d94",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271035",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271035,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271035",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "38f00dc102dde146b5fac15eb822e3780be5a75c101e6efce01e8c72368db0b8",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271036",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271036,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271036",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "647526a8f59839a7c95686dbd0daa64bdc22fceeab75a38f5798b25d61623278",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271037",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271037,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271037",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "cfb8e418c86cb2fd3edfd51ea1df22858fddfbeecb0681fece14beb6992de700",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/putnext/20271038",
+        "environment": "babyai",
+        "task": "putnext",
+        "task_type": "putnext",
+        "seed": 20271038,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/putnext/20271038",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "18fea3e1091b2083ebca83c9c7b6adf42e33b3cecdc7fa472a874a3f495156f4",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271014",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271014,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271014",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "f19fb62bb77500b1b55a1e82e42de3bf340ff1ba3a0ccc36fb398146beda3400",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271015",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271015,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271015",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e6dc6f441f93139665d5d87ac1ecc80fa46c6f1e84fb5753322c3f672c458b25",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271016",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271016,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271016",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "27395c10706c60e94befe49a394d846634324b3fa2848f7d86324cf7b384db08",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271017",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271017,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271017",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "5b06efbca80cf88c1b1198b949d4356e92e2f95201a059bc2bd9acc1f8317fc8",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271018",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271018,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271018",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "20e2814fe79432724833d3719e31be034edac54e088e40a9d010b28c1049cd1f",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271019",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271019,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271019",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "7782080d05f3867455a837f802ccfce33a78e6c5c0772cbabdb55701050863c6",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271020",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271020,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271020",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "7d8fa80b7182a38365f0d2b98fe25238d7bad83a85aaf4f5e0e6bdc276074483",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271021",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271021,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271021",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "b932bc21cbff42d5330da2fe7593a7d7f3240e50fe96650205111b010071f1a8",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271022",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271022,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271022",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "7266859e8a4f8a177f47c3d8c427d371d5fc2951e4d7b8900bca2289d7b4c9f6",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271023",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271023,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271023",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "20dcd503aaad76511493d0fc875b3971c105c2326374219146134b80dca7833d",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271024",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271024,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271024",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "b4358712dee6cc29f642aebb3a7065713ea054de26a0a48a88c4af5197bdf25e",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271025",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271025,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271025",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "c456d0aa3523407e02475ec26cf17a0be042889ea29a8e0454da27d4fbb4f632",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271026",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271026,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271026",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "b664a43cf6afa250c44ee4fbfcadc2d566bcad8bb20b6dbb8b0d3ac8631c8518",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271027",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271027,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271027",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "7a2da561428c13f33ae95810afcc0754f7735a479bf3e171ef53a6d60c796e5c",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271028",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271028,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271028",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "f92aadb219d9ccd4ca2b0840ba3dba15359f684564c3c0eddd89eaed7a0310fe",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271029",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271029,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271029",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "46447e9aa5e1670354486e8da72abf80bddae4bb7e8615e190f60370c49c4ce0",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271030",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271030,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271030",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "ad0a9d8d60244dc9821aeb332409d2ad2c35493134e2076f70bc95af9f493412",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271031",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271031,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271031",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "feacad9a0d0d98869288a5692c54d53f280c2a04fc08456d36d767546795fea0",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271032",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271032,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271032",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "299a930bcacb21da33e19a3c0473bd2560f5bbb9650412ad78bc47d00f57c9bb",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271033",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271033,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271033",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "74ddd82a2f2c4fa064480adbe4c239988f48c2fd0f618e43b0697515d65ef5b2",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271034",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271034,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271034",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "c294a99af9a60b953e999f597832c7dca9ea3b662e845d360afca67c576f6c10",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271035",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271035,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271035",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e5bbc4a6a0e2178e06757247dbaf3b17a38bffcf47e3171c6c8af8429edc13bc",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271036",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271036,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271036",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "d22427273177e8b557470fe186afbb8e050cffffc53329150b2e4eb7b36f8d32",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271037",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271037,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271037",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e40903ba5a9ad11d79c603f00c08fc475e7661749aa5f941098420fe255a40cf",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    },
+    {
+      "case": {
+        "id": "babyai/paper/pick_up_seq_go_to/20271038",
+        "environment": "babyai",
+        "task": "pick_up_seq_go_to",
+        "task_type": "pick_up_seq_go_to",
+        "seed": 20271038,
+        "profile": "paper",
+        "horizon": 128,
+        "group": "babyai/pick_up_seq_go_to/20271038",
+        "paper_exact_seed_replication": false
+      },
+      "initial_sha256": "e7e556320cb06584e3db8c69436a5fdaf1febc2dfbd5c1d054e15542250bd0ac",
+      "actions": [
+        "turn left",
+        "turn right",
+        "go forward",
+        "pick up",
+        "drop",
+        "toggle"
+      ],
+      "action_descriptions_sha256": "cbd199b8f4a451d840fd78e34a00413b02a1d466df5d29c90661d96e015824a3",
+      "native_installation_sha256": "9b5a60561627efba823eb98c59b36469ff3e76e6e6f7f8bfa7da9da0aee68480",
+      "decision_cap": 128,
+      "goal_slots": [
+        8,
+        38,
+        68,
+        98
+      ],
+      "action_menu_mode": "static"
+    }
+  ]
+}

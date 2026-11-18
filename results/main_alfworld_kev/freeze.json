@@ -1,0 +1,240 @@
+{
+  "protocol_hash": "fe39545f79a736121a650302f7e5892f35d709d0d3280d5988dc86c8975ad3f1",
+  "config": {
+    "version": "metajev-alfworld-kev-handoff-v1",
+    "methods": [
+      "jev-flat-h0",
+      "jev-w2",
+      "jev-w05",
+      "d3-flat-h0",
+      "d3-w2",
+      "d3-w05",
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05",
+      "jev-history-h4",
+      "jev-joint-h4",
+      "d3-history-h4",
+      "d3-joint-h4"
+    ],
+    "environments": [
+      "babyai",
+      "minihack",
+      "babaisai",
+      "alfworld"
+    ],
+    "profile": "paper",
+    "seed_start": 20271014,
+    "history_length": 4,
+    "warmup_actions": 8,
+    "decision_caps": {
+      "crafter": 2000
+    },
+    "epsilon": 1e-06,
+    "max_goals": {
+      "babyai": 4,
+      "minihack": 4,
+      "babaisai": 4,
+      "crafter": 8,
+      "alfworld": 4
+    },
+    "providers": {
+      "jev": {
+        "model": "jev-1.13.0",
+        "endpoint": "https://api.typesafe.ai/v1/systemone",
+        "max_input_tokens": 32768,
+        "prices_per_million": {
+          "input": 0.042,
+          "output": 0
+        }
+      },
+      "gpt": {
+        "model": "gpt-6-sol",
+        "endpoint": "https://REDACTED-OPENAI-COMPATIBLE-GATEWAY/v1/responses",
+        "reasoning_effort": "medium",
+        "service_tier": "default",
+        "max_prompt_tokens": 32768,
+        "max_output_tokens": 4096,
+        "prices_per_million": {
+          "input": 2.5,
+          "cached_input": 0.2,
+          "output": 10
+        }
+      },
+      "d3": {
+        "model": "d3",
+        "repo_id": "vllm-sr/d3",
+        "revision": "cbff3a3cb0b074b6585fe9f747b9f9f5557a0e75",
+        "model_sha256": "0e439bebbbbf80d9e1b601c56c55a6fc3a6502b4e396cbbb5f3c3f3acc1d607b",
+        "endpoint": "http://127.0.0.1:8902/v1/systemone",
+        "max_input_tokens": 32768,
+        "runtime_identity": {
+          "format_id": "d3-code-readout-v1",
+          "attention_mode": "noncausal_full_attention",
+          "dtype": "bfloat16",
+          "readout_dtype": "float32",
+          "temperature": 1.0,
+          "fast_path": false,
+          "permutation_average": false,
+          "text_only": true,
+          "versions": {
+            "torch": "2.8.0+cu126",
+            "transformers": "5.17.0",
+            "accelerate": "1.13.0",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "1.33.0",
+            "flash-linear-attention": "0.5.2"
+          },
+          "kernels": {
+            "causal_conv1d_fn": "causal_conv1d.causal_conv1d_interface.causal_conv1d_fn",
+            "fla": "0.5.2",
+            "torch_chunk_gated_delta_rule": "fla.ops.gated_delta_rule.chunk.chunk_gated_delta_rule"
+          }
+        },
+        "endpoints": [
+          "http://127.0.0.1:8902/v1/systemone"
+        ]
+      },
+      "kev": {
+        "model": "kev-latest",
+        "repo_id": "jaredpalmer/kev-27b",
+        "revision": "28be62e9c5ae0471bda2b7c636a55224b4f4b887",
+        "source_revision": "6b719c3c3f367295f6ef336f4f751cf5ff970abc",
+        "head_sha256": "7968f17b03479c1ef9d1c0f3ab8a15e31ecb441cf40691b07ee945ab554d45ad",
+        "endpoint": "http://127.0.0.1:8906/v1/systemone",
+        "endpoints": [
+          "http://127.0.0.1:8906/v1/systemone",
+          "http://127.0.0.1:8907/v1/systemone"
+        ],
+        "max_input_tokens": 65536,
+        "runtime_identity": {
+          "format_id": "kev-systemone-native-v2",
+          "dtype": "bfloat16",
+          "backend": "torch",
+          "temperature_published": 1.32,
+          "date_facts": false,
+          "truncate_states": false,
+          "cuda_graphs": false,
+          "fused": false,
+          "weights": "full",
+          "verification": "all_manifest_files_verified",
+          "max_options": 255
+        }
+      }
+    },
+    "ablation_actors": [],
+    "alfworld": {
+      "split": "valid_unseen",
+      "expected_cases": 134,
+      "horizon": 50,
+      "action_interface": "native_admissible_commands",
+      "native_menu_authorized": true
+    },
+    "execution_scope": {
+      "babyai": [
+        "kev-flat-h0",
+        "kev-w2",
+        "kev-w05"
+      ],
+      "minihack": [
+        "kev-flat-h0",
+        "kev-w2",
+        "kev-w05"
+      ],
+      "babaisai": [
+        "kev-flat-h0",
+        "kev-w2",
+        "kev-w05"
+      ],
+      "alfworld": [
+        "jev-flat-h0",
+        "jev-w2",
+        "jev-w05",
+        "d3-flat-h0",
+        "d3-w2",
+        "d3-w05",
+        "kev-flat-h0",
+        "kev-w2",
+        "kev-w05"
+      ]
+    }
+  },
+  "sources": {
+    "__init__.py": "10f9a05ce7562a4b394bffd9307ecdbbac6901e56b6697f1685cb8a7292ec9e2",
+    "__main__.py": "27a44ea730347f7f069599adbb3ed5ff82c80a733bae75d832d01248f2f2f8b9",
+    "alfworld_adapter.py": "c829ab01bfc92025a66975feb80115280fce602300d6805823e56d4a96bf0a39",
+    "d3_model.py": "b0c7a044a0df0dfcf84b9b854b71cad7416c003fed796c3f9dac035dc35e16f0",
+    "d3_server.py": "0b352d07cb3c8f98b446a00b2d2d4005a9a483409fc7401a4b6b19f54210715c",
+    "efficiency.py": "21a5844283d4af34081b51047a03b987ead6e3f9e56740ca2d880a119ba8f137",
+    "environment.py": "cce627eb1e9216a9c6517aecd832221b9a5c8983787f27cfea892d3bea6f141c",
+    "handoff_plan.py": "70e9fe98e8b1a5ec1e9f47580d19bd23a95ef9bb7bd84047e857f91c0be1bb59",
+    "kev_client.py": "dcfd3d3896702cb0e2123e91366d62c94e8832e8a9821b17dc3b706f876cd59b",
+    "kev_model.py": "53fcecc55e00456624cf9973c552400ade99eef6d42ac3678722c98f8d508377",
+    "launch_d3.py": "b90f6b4a5889ca20322dbd79641a2b3ca79ecca7b33f59908af27d81645ecbdc",
+    "ledger.py": "a3a3297b707caf32e9f9a82be3a4316f6c938b5abed8c5e30a9822beeb292cd5",
+    "policy.py": "f9a8e859c546085a957a00d7c65502717761210de09be3fda794afea7693d512",
+    "prompts.py": "ddcffb72f9791aba767d29c9a0e29725d18cb35c770cd390eb54d2be0cbe78f1",
+    "providers.py": "d532ef11c8546d62e1c03efcb9c719bec8a78f0922d7c2f32c5a601a689301b8",
+    "report.py": "e63bf54396dcaae2930cf672b37da5f43d088244255c819ff39e94cf3e9e2286",
+    "requirements-controller.txt": "f5adaee1cc3413c749c6bbf7c4363ab7a731d13f04eaa200c357ebb2a904b2a5",
+    "requirements-crafter.txt": "a255fa363fc2337a21b220bc29f4fa60504f251c836fa206ce642fbb8db03a84",
+    "requirements-d3.txt": "07b3a7a667b028eb3671e1e93ae8ea60f88b0edbf26b3313403007e1e0f89e62",
+    "requirements-grid.txt": "8078deb941c5c1966ac5968a5d9b8cfe28ae7efbe619e4cfe012e432209274d0",
+    "requirements-nle.txt": "73371fa662cd1aefef462881acd6d6dfa63bdabb1193fb1f27425cc87faad930",
+    "requirements-runner.txt": "912ec6bf4dbc3f92918c41a254ebf7afddf688a8721e570ecc8c6e83236fec72",
+    "runner.py": "e7c761f4b232d42db718da34d81a56b7643b14328e478d4d68a23d0f3503aede",
+    "setup_alfworld.py": "a5b870923c953c32f78c298c5fd7d2e524b52df8fab708b205206445816a571f",
+    "setup_envs.py": "ea7cfb4d40a764647e39ba2271f2fe537f7da7e89ff7b2f8875d1b4509014250",
+    "support.py": "455ddc9b0ab91c9c3dcf54e8a78db7d461b0f993f762c3035bf8c49b7295e0a5",
+    "upstream.lock.json": "6dae01d252f42e73241826639a25d8475d6a9ef97147d092820b0d5bcdaed054"
+  },
+  "manifest_sha256": {
+    "babyai": "4012204c63efbbeed581c0fff151b2b047ab841aeefbcc48402becac023265a4",
+    "minihack": "614003566bd6d757efdd70fc7cad06e885af0ce8283d9157a897e6c45cf3ef77",
+    "babaisai": "66e2aafc7fc09537ef8211566c299ee31b774b8b7ed0c8dc023d03de4d0fb52f",
+    "alfworld": "8dae09faa4b5df7b3b8956cdc0661f196178e5c506e9ea541abe13eaf3f716ba"
+  },
+  "case_count_total": 499,
+  "case_count_by_method": {
+    "jev-flat-h0": 134,
+    "jev-w2": 134,
+    "jev-w05": 134,
+    "d3-flat-h0": 134,
+    "d3-w2": 134,
+    "d3-w05": 134,
+    "kev-flat-h0": 499,
+    "kev-w2": 499,
+    "kev-w05": 499
+  },
+  "methods_by_environment": {
+    "babyai": [
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05"
+    ],
+    "minihack": [
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05"
+    ],
+    "babaisai": [
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05"
+    ],
+    "alfworld": [
+      "jev-flat-h0",
+      "jev-w2",
+      "jev-w05",
+      "d3-flat-h0",
+      "d3-w2",
+      "d3-w05",
+      "kev-flat-h0",
+      "kev-w2",
+      "kev-w05"
+    ]
+  },
+  "main_episode_count": 2301,
+  "episode_count": 2301,
+  "paid_requests_at_preparation": 0
+}

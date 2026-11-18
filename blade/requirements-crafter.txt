@@ -1,0 +1,10 @@
+setuptools==75.8.2
+wheel==0.45.1
+numpy==1.26.4
+gym==0.25.0
+gymnasium==1.2.0
+pillow==11.3.0
+scipy==1.15.3
+imageio==2.37.0
+opensimplex==0.4.5.1
+ruamel.yaml==0.18.10
