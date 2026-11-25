@@ -1093,6 +1093,8 @@ $('#copyBib').addEventListener('click', function(){ const pre = $('#bib'), done 
   if(!a||!v) return;
   var pages=document.getElementById('pdfvPages'), info=document.getElementById('pdfvInfo'), raw=document.getElementById('pdfvRaw');
   var state=0, CDN='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+  var framed=false; try{ framed=window.self!==window.top; }catch(e){ framed=true; }
+  if(framed) raw.hidden=true; /* embedded viewers do not allow file saves */
   function lib(){return new Promise(function(ok,no){
     if(window.pdfjsLib) return ok();
     var s=document.createElement('script'); s.src=CDN+'pdf.min.js'; s.onload=function(){ok();}; s.onerror=no; document.head.appendChild(s);
