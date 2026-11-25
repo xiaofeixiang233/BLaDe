@@ -401,7 +401,7 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mute
 
 <div class="nav"><div class="wrap">
   <a class="brand" href="#top">BLaDe<i>.</i></a>
-  <nav><a href="#replays">Replays</a><a href="#method">Method</a><a href="#results">Results</a><a href="#cite">Cite</a></nav>
+  <nav><a href="#replays">Replays</a><a href="#method">Method</a><a href="#results">Results</a></nav>
   <label class="pal"><span>Palette</span><select id="palSel" aria-label="Color palette"><option value="">Original</option><option value="hokusai">Hokusai</option><option value="vangogh">Van Gogh</option><option value="monet">Monet</option><option value="matisse">Matisse</option></select></label>
 </div></div>
 
@@ -529,18 +529,6 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&location.hash!==
     </div>
   </div>
 </div></section>
-
-<section id="cite"><div class="wrap cite">
-  <div><div class="eyebrow">Reference</div><h2 style="margin-top:12px">Cite BLaDe</h2><p style="color:var(--ink2);margin-top:12px">Manuscript dated November 12, 2026. The entry has no arXiv identifier yet.</p></div>
-  <div><pre id="bib">@misc{huang2026blade,
-  title  = {Bayesian Language Decision: Looking Back and Planning Ahead},
-  author = {Huang, Haicheng and Lin, Lang and Liu, Xinyang and Wang, Yanbo
-            and Chen, Tianyu and An, Ruyi and Zhou, Mingyuan},
-  year   = {2026},
-  note   = {The University of Texas at Austin}
-}</pre><button class="btn copy" id="copyBib" type="button">Copy BibTeX</button></div>
-</div></section>
-
 <footer><div class="wrap">BLaDe · Bayesian Language Decision · The University of Texas at Austin. Result figures are from the manuscript; replays and the ALFWorld task-level view are computed from the released episode logs.</div></footer>
 <div id="tip" hidden></div>
 
@@ -1077,8 +1065,6 @@ lineChart($('#histChart'), {W:420, H:230, xs:[0, 4, 8, 12], ys:[13.6, 54.4, 60.0
     try { if (sel.value) localStorage.setItem('blade-palette', sel.value); else localStorage.removeItem('blade-palette'); } catch (e) {} }); })();
 
 /* ---------- copy ---------- */
-$('#copyBib').addEventListener('click', function(){ const pre = $('#bib'), done = () => { this.textContent = 'Copied'; setTimeout(() => this.textContent = 'Copy BibTeX', 1600); }; const sel = () => { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); this.textContent = 'Selected, press Ctrl/⌘+C'; };
-  try { navigator.clipboard.writeText(pre.textContent).then(done, sel); } catch (e) { sel(); } });
 })();
 </script>
 
