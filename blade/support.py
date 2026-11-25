@@ -62,12 +62,12 @@ def load_config(path):
         raise ValueError('Select the five v3 benchmark names')
     if cfg.get('profile') not in ('paper','smoke'):raise ValueError('Use paper or smoke case profile')
     caps=cfg.get('decision_caps')
-    if (not isinstance(caps,dict) or caps!={'crafter':2000}
+    if (not isinstance(caps,dict) or caps!={}
             or any(type(value) is not int for value in caps.values())):
-        raise ValueError('This protocol requires exactly 2000 outer action decisions for Crafter')
+        raise ValueError('This protocol sets no outer decision caps')
     if (cfg.get('history_length')!=4 or cfg.get('warmup_actions')!=8
             or cfg.get('epsilon')!=1e-6
-            or cfg.get('max_goals')!={'babyai':4,'minihack':4,'babaisai':4,'crafter':8,'alfworld':4}):
+            or cfg.get('max_goals')!={'babyai':4,'minihack':4,'babaisai':4,'alfworld':4}):
         raise ValueError('Frozen history, warm-up, smoothing or goal count differs')
     # plan_for() rejects unknown versions; a plan cannot be widened in configuration.
     if not matches_plan(cfg) or cfg.get('ablation_actors')!=['jev','d3']:

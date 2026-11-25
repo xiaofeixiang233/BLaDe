@@ -19,12 +19,6 @@
       "revision": "40ae1b29dbc67f2ecea06cc161ed5ca51719e5e3",
       "folder": "baba-is-ai-40ae1b29dbc67f2ecea06cc161ed5ca51719e5e3"
     },
-    "crafter": {
-      "url": "https://codeload.github.com/danijar/crafter/tar.gz/e04542a2159f1aad3d4c5ad52e8185717380ee3a",
-      "sha256": "cd9f7d358ade4e1efa79e16d29f66fa8eba580350eb8036b5da62eadbc718038",
-      "revision": "e04542a2159f1aad3d4c5ad52e8185717380ee3a",
-      "folder": "crafter-e04542a2159f1aad3d4c5ad52e8185717380ee3a"
-    },
     "minihack": {
       "url": "https://codeload.github.com/BartekCupial/minihack/tar.gz/3ecb6da4eadcac7a4dbc5f8e801ccf636e34d7ec",
       "sha256": "c875b796f4a41f63521f1558bd2891693ebaf9aa8943db3d3393d6870e2293b3",
@@ -60,9 +54,7 @@
     "balrog/environments/nle/auto_more.py": "a2bfc7ba43d34e0ffec7473081041deb4f452ca78b9e6b398cb5aef359eac432",
     "balrog/environments/nle/progress.py": "7c267bd24c9a78a15176b53738849cb9ce480849c031c6a77021869e0f5aa8f2",
     "balrog/environments/wrappers/nle_timelimit.py": "2c34e3ab0d99659253ac9a3f614b77b7cc5051b0bd27ae648a442156bad802d5",
-    "balrog/environments/wrappers/gym_compatibility.py": "957ac20cae50180d4d23bbdd58a5c1c92ba8715eb06f82ee3a16f3be88a38e49",
-    "balrog/environments/crafter/env.py": "99d9da1b4858322ca5a821c14964c4290acff55c9b046e4901f9f266575e5d9e",
-    "balrog/environments/crafter/__init__.py": "82b545b80394a8564b4d0455886157c9f3d48d37067ee9d4a402ba6336a171eb"
+    "balrog/environments/wrappers/gym_compatibility.py": "957ac20cae50180d4d23bbdd58a5c1c92ba8715eb06f82ee3a16f3be88a38e49"
   },
   "baba_tasks": [
     "env/make_win-distr_obj_rule",

@@ -8,7 +8,7 @@ from blade.efficiency import summarize_efficiency
 
 def episode(identity, method="jev-flat-h0", status="complete", won=False,
             progression=0, decisions=10, wall=20):
-    return {"id": identity, "environment": "crafter", "case": {"id": "case1"},
+    return {"id": identity, "environment": "minihack", "case": {"id": "case1"},
             "method": method, "status": status, "metrics": {"won": won, "progression": progression},
             "decisions": decisions, "episode_wall_seconds": wall}
 
@@ -37,13 +37,13 @@ class EfficiencyAccounting(unittest.TestCase):
                     [use("owner", "actor"), use("consumer", "actor"),
                      use("consumer", "planner", role="goal", kind="gpt")])
         logical = result["logical"]
-        self.assertEqual(logical["by_environment_method_provider"]["crafter|jev-w2|jev"]["latency_seconds"]["p95"], 1)
-        self.assertEqual(logical["by_environment_method_provider"]["crafter|jev-w2|gpt"]["latency_seconds"]["p95"], 9)
-        self.assertEqual(logical["by_task_method_model"]["crafter|same-task|jev-w2|gpt|planner-model"]["requests"], 1)
-        self.assertEqual(logical["by_task_method_credential_slot"]["crafter|same-task|jev-w2|gpt|gpt-key-02"]["requests"], 1)
+        self.assertEqual(logical["by_environment_method_provider"]["minihack|jev-w2|jev"]["latency_seconds"]["p95"], 1)
+        self.assertEqual(logical["by_environment_method_provider"]["minihack|jev-w2|gpt"]["latency_seconds"]["p95"], 9)
+        self.assertEqual(logical["by_task_method_model"]["minihack|same-task|jev-w2|gpt|planner-model"]["requests"], 1)
+        self.assertEqual(logical["by_task_method_credential_slot"]["minihack|same-task|jev-w2|gpt|gpt-key-02"]["requests"], 1)
         physical = result["physical"]["by_environment_method_provider"]
-        self.assertNotIn("crafter|jev-w2|jev", physical)
-        self.assertEqual(physical["crafter|jev-flat-h0|jev"]["requests"], 1)
+        self.assertNotIn("minihack|jev-w2|jev", physical)
+        self.assertEqual(physical["minihack|jev-flat-h0|jev"]["requests"], 1)
 
     def test_empty_context_breakdowns_have_stable_schema(self):
         result = summarize_efficiency([], [], [])
@@ -60,10 +60,10 @@ class EfficiencyAccounting(unittest.TestCase):
         result=summarize_efficiency([one,two],requests,[use('one','a'),use('two','a'),use('two','b',step=1)])
         physical=result['physical']['by_task_method_credential_slot']
         logical=result['logical']['by_task_method_credential_slot']
-        self.assertEqual(physical['crafter|native-task|jev-flat-h0|jev|jev-key-01']['requests'],1)
-        self.assertNotIn('crafter|native-task|jev-w2|jev|jev-key-01',physical)
-        self.assertEqual(logical['crafter|native-task|jev-w2|jev|jev-key-01']['requests'],1)
-        self.assertAlmostEqual(physical['crafter|native-task|jev-w2|jev|jev-key-02']['cost']['total_api_cost_usd'],.2)
+        self.assertEqual(physical['minihack|native-task|jev-flat-h0|jev|jev-key-01']['requests'],1)
+        self.assertNotIn('minihack|native-task|jev-w2|jev|jev-key-01',physical)
+        self.assertEqual(logical['minihack|native-task|jev-w2|jev|jev-key-01']['requests'],1)
+        self.assertAlmostEqual(physical['minihack|native-task|jev-w2|jev|jev-key-02']['cost']['total_api_cost_usd'],.2)
 
     def test_shared_response_costs_full_logically_but_only_explicit_first_owner_physically(self):
         episodes = [episode("one"), episode("two", "jev-w2")]
@@ -190,7 +190,7 @@ class EfficiencyAccounting(unittest.TestCase):
         pending["case"]["task_type"] = "default"
         pending["metrics"] = None
         result = summarize_efficiency([done, pending], [request("r")], [use("done", "r")])
-        task = result["logical"]["by_task_method"]["crafter|default|jev-flat-h0"]
+        task = result["logical"]["by_task_method"]["minihack|default|jev-flat-h0"]
         self.assertEqual(task["episodes"], 2)
         self.assertEqual(task["progression_mean_completed_known"], .25)
         self.assertFalse(task["complete_cohort"])

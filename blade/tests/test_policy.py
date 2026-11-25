@@ -43,8 +43,8 @@ class PolicyTests(unittest.TestCase):
         self.assertEqual(policy.goal_time(100,30,8,4)['remaining_goal_horizon'],1)
 
     def test_effective_decision_cap_preserves_native_horizon(self):
-        cfg={'decision_caps':{'crafter':2000,'nle':2000}}
-        for name,horizon,expected in [('nle',100000,2000),('crafter',2000,2000),
+        cfg={'decision_caps':{'nle':2000}}
+        for name,horizon,expected in [('nle',100000,2000),
                 ('babyai',64,64),('minihack',100,100),('babaisai',100,100)]:
             case={'environment':name,'horizon':horizon}
             self.assertEqual(policy.effective_decision_cap(cfg,case),expected)

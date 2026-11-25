@@ -62,7 +62,7 @@ class RunnerTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
         self.cfg=json.loads((HERE/'configs/ablation.json').read_text());self.cfg.pop('execution_scope',None);self.cfg['ablation_actors']=['jev','d3'];self.cfg.update(output=self.tmp.name,protocol_hash='a'*64)
-        self.cfg['budgets']={'jev_usd':10,'gpt_usd':10};self.case={'id':'fake/case','environment':'babyai','horizon':20,'group':'fixed'}
+        self.cfg['budgets']={'jev_usd':10,'gpt_usd':10};self.cfg['decision_caps']={'capped':2000};self.cfg['max_goals']['capped']=8;self.case={'id':'fake/case','environment':'babyai','horizon':20,'group':'fixed'}
         g=FakeGame('babyai',self.case);p=g.observe()
         self.row={'case':self.case,'initial_sha256':digest(p),'actions':g.actions(),
                   'action_descriptions_sha256':digest(p['action_descriptions']),
@@ -74,7 +74,7 @@ class RunnerTests(unittest.TestCase):
         self.ledger=Ledger(self.tmp.name,self.cfg,providers={k:wrapped(k,f) for k,f in [('jev',choice),('d3',choice),('kev',choice),('gpt',target)]})
         self.addCleanup(self.ledger.close)
 
-    def cap_fixture(self,name='crafter',case_id='cap/case'):
+    def cap_fixture(self,name='capped',case_id='cap/case'):
         case={'id':case_id,'environment':name,'horizon':2000,'group':'fixed'}
         game=NeverDoneGame(name,case);public=game.observe()
         return {'case':case,'initial_sha256':digest(public),'actions':game.actions(),
@@ -93,7 +93,7 @@ class RunnerTests(unittest.TestCase):
         from blade import environment
         class PreparedGame(NeverDoneGame):
             def identity(self):return {'native':'unchanged'}
-        for name in ('crafter',):
+        for name in ('capped',):
             case=self.cap_fixture(name)['case'];before=deepcopy(case)
             with patch.object(environment,'make_cases',return_value=[case]),\
                     patch.object(environment,'Game',PreparedGame),\
@@ -144,12 +144,12 @@ class RunnerTests(unittest.TestCase):
                     else:
                         self.assertNotIn('desired_state', state)
 
-    def test_short_benchmark_ablations_cannot_run_on_crafter(self):
+    def test_short_benchmark_ablations_cannot_run_outside_their_scope(self):
         row = self.cap_fixture()
         for actor in ('jev', 'd3'):
             for suffix in ('-history-h4', '-joint-h4'):
                 with self.subTest(method=actor + suffix), self.assertRaises(Halt):
-                    runner.execute_episode(self.cfg, 'crafter', row, actor + suffix, self.ledger, NeverDoneGame)
+                    runner.execute_episode(self.cfg, 'capped', row, actor + suffix, self.ledger, NeverDoneGame)
         self.assertEqual(self.calls, [])
 
     def test_interface_failure_remains_failed_no_resampling(self):
@@ -182,7 +182,7 @@ class RunnerTests(unittest.TestCase):
     def test_all_nine_main_methods_stop_at_2000_and_report_custom_caps(self):
         from blade.report import report
         cfg=deepcopy(self.cfg);cfg['output']=str(Path(self.tmp.name)/'boundary')
-        cfg['environments']=['crafter']
+        cfg['environments']=['capped']
         manifest_dir=Path(cfg['output'])/'manifests';manifest_dir.mkdir(parents=True)
         with patch.object(runner.os,'fsync'),patch('builtins.print'):
             for name in cfg['environments']:
@@ -195,7 +195,7 @@ class RunnerTests(unittest.TestCase):
                             game=NeverDoneGame(n,c);games.append(game);return game
                         # Interrupt after persisting the last allowed action.
                         # Resume must replay and finalize with no new request.
-                        if name=='crafter' and method=='jev-w2':
+                        if name=='capped' and method=='jev-w2':
                             original=runner.append
                             def interrupt(path,value):
                                 original(path,value)
@@ -252,8 +252,8 @@ class RunnerTests(unittest.TestCase):
         with patch.object(runner.os,'fsync'),patch('builtins.print'):
             for method in policy.MAIN_METHODS:
                 ledger=FastLedger()
-                runner.execute_episode(cfg,'crafter',row,method,ledger,EarlyDoneGame)
-                path,_,_=runner.episode_paths(cfg['output'],f'crafter|cap/case|{method}')
+                runner.execute_episode(cfg,'capped',row,method,ledger,EarlyDoneGame)
+                path,_,_=runner.episode_paths(cfg['output'],f'capped|cap/case|{method}')
                 summary=json.loads(path.read_text())
                 self.assertEqual(summary['decisions'],13)
                 self.assertEqual(summary['termination_reason'],'native_done')
@@ -261,9 +261,9 @@ class RunnerTests(unittest.TestCase):
                 self.assertFalse(summary['decision_cap_reached'])
                 self.assertEqual([c[1] for c in ledger.calls if c[2]=='goal'],
                                  [] if policy.is_baseline(method) else [8])
-            row=self.cap_fixture('crafter','native/at-cap');ledger=FastLedger()
-            runner.execute_episode(cfg,'crafter',row,'d3-flat-h0',ledger,FakeGame)
-        path,_,_=runner.episode_paths(cfg['output'],'crafter|native/at-cap|d3-flat-h0')
+            row=self.cap_fixture('capped','native/at-cap');ledger=FastLedger()
+            runner.execute_episode(cfg,'capped',row,'d3-flat-h0',ledger,FakeGame)
+        path,_,_=runner.episode_paths(cfg['output'],'capped|native/at-cap|d3-flat-h0')
         summary=json.loads(path.read_text())
         self.assertEqual(summary['decisions'],2000)
         self.assertEqual(summary['termination_reason'],'native_done')

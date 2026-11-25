@@ -15,10 +15,9 @@ class CapConfigurationTests(unittest.TestCase):
             path = Path(directory) / 'config.local.json'
             path.write_text(json.dumps(source))
             loaded = load_config(path)
-            self.assertEqual(loaded['decision_caps'], {'crafter': 2000})
+            self.assertEqual(loaded['decision_caps'], {})
             self.assertEqual(loaded['version'], 'blade-ablation-v1')
-            for cap in ({'crafter': 2000, 'nle': 2000}, {'crafter': 500},
-                        {'crafter': 2000, 'alfworld': 50}, {}, {'crafter': 2000.}):
+            for cap in ({'nle': 2000}, {'babyai': 500}, {'alfworld': 50}, None):
                 changed = deepcopy(source)
                 changed['decision_caps'] = cap
                 path.write_text(json.dumps(changed))
@@ -42,7 +41,6 @@ class CapConfigurationTests(unittest.TestCase):
             self.assertEqual(policy.methods_for_environment(source, name),
                 ['jev-history-h4','jev-joint-h4','d3-history-h4','d3-joint-h4'])
         self.assertEqual(policy.methods_for_environment(source, 'alfworld'), [])
-        self.assertEqual(policy.methods_for_environment(source, 'crafter'), [])
         self.assertNotIn('kev-history-h4', policy.METHODS)
         self.assertNotIn('kev-joint-h4', policy.METHODS)
 

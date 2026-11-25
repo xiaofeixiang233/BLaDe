@@ -31,17 +31,16 @@ class PlanTests(unittest.TestCase):
         self.assertEqual(len(selected_methods(cfg, 'all')), 4)
         for actor in ('jev', 'd3'):
             self.assertEqual(len(selected_methods(cfg, actor)), 2)
-        self.assertEqual(policy.methods_for_environment(cfg, 'crafter'), [])
         self.assertEqual(policy.methods_for_environment(cfg, 'nle'), [])
         cfg['profile'] = 'smoke'
         self.assertEqual(planned_counts(cfg)['total_episodes'], 12)
 
     def test_scope_cannot_expand_in_configuration(self):
-        for kind in ('crafter', 'ablation', 'jev_short'):
+        for kind in ('extra_env', 'ablation', 'jev_short'):
             cfg = deepcopy(self.cfg)
-            if kind == 'crafter':
-                cfg['environments'].append('crafter')
-                cfg['execution_scope']['crafter'] = ['kev-flat-h0']
+            if kind == 'extra_env':
+                cfg['environments'].append('alfworld')
+                cfg['execution_scope']['alfworld'] = ['kev-flat-h0']
             elif kind == 'ablation':
                 cfg['execution_scope']['babyai'].append('kev-joint-h4')
             else:
@@ -76,7 +75,6 @@ class PlanTests(unittest.TestCase):
         self.assertEqual(selected_methods(cfg, 'all'), list(policy.MAIN_METHODS))
         self.assertEqual(len(selected_methods(cfg, 'kev')), 3)
         self.assertEqual(policy.methods_for_environment(cfg, 'alfworld'), list(policy.MAIN_METHODS))
-        self.assertEqual(policy.methods_for_environment(cfg, 'crafter'), [])
         raw = json.loads(main.read_text())
         raw['execution_scope']['alfworld'].append('jev-joint-h4')
         main.write_text(json.dumps(raw))

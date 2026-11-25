@@ -17,7 +17,8 @@
       }
     },
     "upstream.lock.json": {
-      "reference_sha256": "6dae01d252f42e73241826639a25d8475d6a9ef97147d092820b0d5bcdaed054",
+      "reference_sha256": "c876f362d99e93b0b332b40433acfc48c60ac521ce21872b7ffd20abe0aa4d17",
+      "note": "Differs from the observed snapshots only by the removal of the unused Crafter entries.",
       "observed_sha256": {
         "cap2000": "6dae01d252f42e73241826639a25d8475d6a9ef97147d092820b0d5bcdaed054",
         "main_v3": "6dae01d252f42e73241826639a25d8475d6a9ef97147d092820b0d5bcdaed054",
@@ -92,7 +93,8 @@
         }
       },
       "_prompt_module": {
-        "reference_sha256": "bbbee4e0249aab146230f4d703093a3220b0b98c22fed09a5ab461f8a2a42de9",
+        "reference_sha256": "49a657e63cde95c10faa55aa3029f7bf3edf2ae8ff579c771f429882a34644c4",
+        "note": "Differs from the observed snapshots only by the removal of the unused Crafter entries.",
         "observed_sha256": {
           "cap2000": "bbbee4e0249aab146230f4d703093a3220b0b98c22fed09a5ab461f8a2a42de9",
           "main_v3": "bbbee4e0249aab146230f4d703093a3220b0b98c22fed09a5ab461f8a2a42de9",
@@ -345,9 +347,7 @@
     "balrog/environments/nle/auto_more.py": "a2bfc7ba43d34e0ffec7473081041deb4f452ca78b9e6b398cb5aef359eac432",
     "balrog/environments/nle/progress.py": "7c267bd24c9a78a15176b53738849cb9ce480849c031c6a77021869e0f5aa8f2",
     "balrog/environments/wrappers/nle_timelimit.py": "2c34e3ab0d99659253ac9a3f614b77b7cc5051b0bd27ae648a442156bad802d5",
-    "balrog/environments/wrappers/gym_compatibility.py": "957ac20cae50180d4d23bbdd58a5c1c92ba8715eb06f82ee3a16f3be88a38e49",
-    "balrog/environments/crafter/env.py": "99d9da1b4858322ca5a821c14964c4290acff55c9b046e4901f9f266575e5d9e",
-    "balrog/environments/crafter/__init__.py": "82b545b80394a8564b4d0455886157c9f3d48d37067ee9d4a402ba6336a171eb"
+    "balrog/environments/wrappers/gym_compatibility.py": "957ac20cae50180d4d23bbdd58a5c1c92ba8715eb06f82ee3a16f3be88a38e49"
   },
   "short_case_banks": {
     "babyai": {

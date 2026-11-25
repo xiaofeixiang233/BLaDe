@@ -114,7 +114,7 @@ def wrapper_identity():
         "source_files_sha256": actual,
         "native_revisions": {k: v["revision"] for k, v in LOCK["sources"].items()},
         "native_caps": {"babyai": [64, 128], "minihack": 100,
-            "babaisai": 100, "crafter": 2000, "nle": 100000},
+            "babaisai": 100, "nle": 100000},
         "public_projection": "Complete original public text, no raw arrays/images/hidden state",
         "menus": "Complete static native language menus; no state legality filter",
         "compatibility_changes": [
@@ -122,7 +122,6 @@ def wrapper_identity():
             "Baba unused expert target_plan read omitted; original no-YOU reset retained with fresh public text serialization.",
             "NLE selected 00..99 menu labels mechanically emit both literal digits; all native subactions retained."],
         "custom_goal_completion_or_legality_checks": False,
-        "crafter_engine_modified": False,
         "nle_calendar_caveat": "Pinned NLE retains native calendar events; paired initial public hashes must match."}
 
 
@@ -149,9 +148,6 @@ def _prompt_module(name):
         and n.name == "get_instruction_prompt" or isinstance(n, ast.Assign)
         and any(isinstance(t, ast.Name) and t.id in ("ACTIONS", "ACTION_DICT") for t in n.targets)]
     namespace = {}
-    if name == "crafter":
-        namespace["ACTIONS"] = list(_module("balrog/environments/crafter/env.py",
-            "_six_crafter_for_prompt").ACTIONS)
     exec(compile(ast.Module(body=nodes, type_ignores=[]), str(path), "exec"), namespace)
     return namespace
 

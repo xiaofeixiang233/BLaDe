@@ -38,7 +38,7 @@ class CaseContract(unittest.TestCase):
             make_cases("babyai", limit=0)
 
     def test_main_arms_share_decision_caps_without_changing_native_cases(self):
-        cfg={'decision_caps':{'crafter':2000}}
+        cfg={'decision_caps':{}}
         for name in BENCHMARKS:
             if name == "alfworld": continue  # Its dynamic-menu cases have a separate contract.
             for case in make_cases(name):

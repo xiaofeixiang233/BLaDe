@@ -29,15 +29,12 @@
   "workers": 4,
   "history_length": 4,
   "warmup_actions": 8,
-  "decision_caps": {
-    "crafter": 2000
-  },
+  "decision_caps": {},
   "epsilon": 1e-06,
   "max_goals": {
     "babyai": 4,
     "minihack": 4,
     "babaisai": 4,
-    "crafter": 8,
     "alfworld": 4
   },
   "credentials_file": null,
