@@ -155,21 +155,6 @@ Outputs (under `outputs/<plan>/`):
 episode logs and planner targets behind Tables 1, 2 and 4 and the History / Joint comparison.
 Raw request ledgers and machine logs are not included.
 
-## Scope and caveats
-
-- The paper's runs were executed in three batches with earlier snapshots of this code. This
-  repository merges them into one package; prompts, policy, adapters and the upstream lock
-  are checked against those snapshots by `blade/tests/test_short_parity.py` and
-  `test_previous_six_parity.py`. Because module names changed, the `protocol_hash` of a new
-  run differs from the hashes stored in `results/`.
-- Cases use this project's fixed seed bank (`20271014 + i`). The benchmark sizes follow
-  BALROG, but the runs are not a seed-for-seed reproduction of any leaderboard.
-- The guidance-weight sweep and history-length study in the paper used configurations that
-  are not part of the two frozen plans here.
-- The package still contains a Crafter adapter from earlier work; neither plan uses it.
-- The combined score is a product-of-experts rule over the actor's own probabilities. It is
-  not claimed to be a calibrated posterior.
-
 ## Citation
 
 ```bibtex
