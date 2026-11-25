@@ -1,8 +1,6 @@
 # BLaDe: Bayesian Language Decision
 
-Code and experiment records for **"Bayesian Language Decision: Looking Back and Planning Ahead"**
-(Haicheng Huang\*, Lang Lin\*, Xinyang Liu\*, Yanbo Wang, Tianyu Chen, Ruyi An, Mingyuan Zhou;
-The University of Texas at Austin).
+Code and experiment records for **"Bayesian Language Decision: Looking Back and Planning Ahead"**.
 
 [Paper (PDF, download)](docs/blade-paper.pdf?raw=true) · [Project page](docs/index.html) (a single self-contained HTML file; open it in a browser)
 
