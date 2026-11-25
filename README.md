@@ -155,16 +155,6 @@ Outputs (under `outputs/<plan>/`):
 episode logs and planner targets behind Tables 1, 2 and 4 and the History / Joint comparison.
 Raw request ledgers and machine logs are not included.
 
-## Citation
-
-```bibtex
-@article{huang2026blade,
-  title   = {Bayesian Language Decision: Looking Back and Planning Ahead},
-  author  = {Huang, Haicheng and Lin, Lang and Liu, Xinyang and Wang, Yanbo and Chen, Tianyu and An, Ruyi and Zhou, Mingyuan},
-  year    = {2026}
-}
-```
-
 ## License
 
 MIT, see [LICENSE](LICENSE). Benchmarks, model weights and upstream sources fetched by the
