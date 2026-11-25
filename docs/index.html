@@ -385,6 +385,16 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mute
   .nav nav a{padding:6px 7px;font-size:13px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar u{transition:none}.goal.flash{animation:none}}
+
+/* in-page paper viewer */
+.pdfv{position:fixed;inset:0;z-index:200;background:var(--sunken);display:flex;flex-direction:column}
+.pdfv-bar{display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--line);color:var(--ink);font-size:14px}
+.pdfv-bar b{font-weight:600}
+.pdfv-bar span{color:var(--muted);flex:1;min-width:0}
+.pdfv-bar a,.pdfv-bar button{font:inherit;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;text-decoration:none}
+.pdfv-bar a:hover,.pdfv-bar button:hover{border-color:var(--ink2)}
+.pdfv-pages{flex:1;overflow:auto;padding:16px 12px 40px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.pdfv-pages canvas{background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.18);max-width:100%;height:auto}
 </style>
 </head>
 <body>
@@ -1069,6 +1079,53 @@ lineChart($('#histChart'), {W:420, H:230, xs:[0, 4, 8, 12], ys:[13.6, 54.4, 60.0
 /* ---------- copy ---------- */
 $('#copyBib').addEventListener('click', function(){ const pre = $('#bib'), done = () => { this.textContent = 'Copied'; setTimeout(() => this.textContent = 'Copy BibTeX', 1600); }; const sel = () => { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); this.textContent = 'Selected, press Ctrl/⌘+C'; };
   try { navigator.clipboard.writeText(pre.textContent).then(done, sel); } catch (e) { sel(); } });
+})();
+</script>
+
+<div class="pdfv" id="pdfv" hidden role="dialog" aria-modal="true" aria-label="Paper">
+  <div class="pdfv-bar"><b>Paper</b><span id="pdfvInfo"></span><a id="pdfvRaw" href="blade-paper.pdf" download="blade-paper.pdf">Download</a><button id="pdfvX" type="button">Close</button></div>
+  <div class="pdfv-pages" id="pdfvPages"></div>
+</div>
+<script>
+/* ---------- paper viewer: renders the PDF in the page, for hosts where a PDF link does not open ---------- */
+(function(){
+  var a=document.querySelector('a.btn[href="blade-paper.pdf"]'), v=document.getElementById('pdfv');
+  if(!a||!v) return;
+  var pages=document.getElementById('pdfvPages'), info=document.getElementById('pdfvInfo'), raw=document.getElementById('pdfvRaw');
+  var state=0, CDN='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+  function lib(){return new Promise(function(ok,no){
+    if(window.pdfjsLib) return ok();
+    var s=document.createElement('script'); s.src=CDN+'pdf.min.js'; s.onload=function(){ok();}; s.onerror=no; document.head.appendChild(s);
+  });}
+  function close(){ v.hidden=true; document.documentElement.style.overflow=''; }
+  function fail(){ state=0; info.textContent='The viewer could not load the paper here. Try Download.'; }
+  function open(){
+    v.hidden=false; document.documentElement.style.overflow='hidden';
+    if(state) return; state=1; pages.textContent=''; info.textContent='Loading\u2026';
+    lib().then(function(){
+      pdfjsLib.GlobalWorkerOptions.workerSrc=CDN+'pdf.worker.min.js';
+      return fetch(a.getAttribute('href'));
+    }).then(function(r){ if(!r.ok) throw new Error('fetch'); return r.arrayBuffer(); })
+    .then(function(buf){
+      try{ raw.href=URL.createObjectURL(new Blob([buf.slice(0)],{type:'application/pdf'})); }catch(e){}
+      return pdfjsLib.getDocument({data:buf}).promise;
+    }).then(function(doc){
+      info.textContent=doc.numPages+' pages';
+      var w=Math.max(280,Math.min(pages.clientWidth-24,920)), dpr=Math.min(window.devicePixelRatio||1,2), i=1;
+      (function next(){
+        if(i>doc.numPages) return;
+        doc.getPage(i++).then(function(p){
+          var sc=w/p.getViewport({scale:1}).width, vp=p.getViewport({scale:sc*dpr});
+          var c=document.createElement('canvas'); c.width=Math.floor(vp.width); c.height=Math.floor(vp.height); c.style.width=w+'px';
+          pages.appendChild(c);
+          return p.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;
+        }).then(next,fail);
+      })();
+    }).catch(fail);
+  }
+  a.addEventListener('click',function(e){ if(e.metaKey||e.ctrlKey||e.shiftKey||e.button) return; e.preventDefault(); open(); });
+  document.getElementById('pdfvX').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!v.hidden) close(); });
 })();
 </script>
 
