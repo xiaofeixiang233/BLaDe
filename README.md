@@ -4,6 +4,8 @@ Code and experiment records for **"Bayesian Language Decision: Looking Back and 
 (Haicheng Huang\*, Lang Lin\*, Xinyang Liu\*, Yanbo Wang, Tianyu Chen, Ruyi An, Mingyuan Zhou;
 The University of Texas at Austin).
 
+[Paper (PDF)](docs/blade-paper.pdf) · [Project page](docs/index.html) (a single self-contained HTML file; open it in a browser)
+
 BLaDe is a training-free way to pair a fast System I actor with a slow System II planner.
 One frozen actor is queried under three contexts and the answers are combined with a single weight `w`:
 
@@ -37,6 +39,8 @@ blade/                 the experiment package (python -m blade)
   configs/             main.json, ablation.json
   tests/               offline tests (no model calls)
 docs/PROTOCOL.md       frozen protocol and what the program does and does not decide
+docs/blade-paper.pdf   the paper
+docs/index.html        the project page (self-contained)
 results/               result tables and per-step episode logs of the paper's runs
 ```
 
