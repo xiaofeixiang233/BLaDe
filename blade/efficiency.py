@@ -317,6 +317,6 @@ def summarize_efficiency(episodes, requests, logical_uses):
             "cost": "Known subtotals do not turn unknown costs into zero. API cost excludes local GPU cost, which remains unknown unless explicitly accounted. Zero or unknown denominators yield null efficiency.",
             "efficiency": "Successes or sum of completed progression divided by known positive total API cost. Failed and unfinished episodes stay in cohort counts and their incurred costs stay charged. Non-complete cohorts are explicitly provisional; no future usage is projected.",
             "success_steps": "Mean decisions among successful completed episodes is conditional, not an unconditional efficiency estimate.",
-            "progress": "Progression is the benchmark metric; Crafter progression is unlocked achievements/22. Won is a separate metric and Crafter all22 wins must not replace progression.",
+            "progress": "Progression is the benchmark metric. Won is a separate metric and must not replace progression.",
         },
     }

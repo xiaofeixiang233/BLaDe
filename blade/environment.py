@@ -25,7 +25,7 @@ HERE = Path(__file__).resolve().parent
 LOCK = json.loads((HERE / "upstream.lock.json").read_text())
 RUNTIME = Path(os.environ.get("BLADE_RUNTIME_ROOT", HERE / ".runtime")).resolve()
 BALROG = RUNTIME / "upstream" / LOCK["sources"]["balrog"]["folder"]
-BENCHMARKS = ("babyai", "minihack", "babaisai", "crafter", "alfworld")
+BENCHMARKS = ("babyai", "minihack", "babaisai", "alfworld")
 SEED_START = 20271014
 CHOICE_LIMIT = 255
 BABYAI_TASKS = ("goto", "pickup", "open", "putnext", "pick_up_seq_go_to")
@@ -56,8 +56,7 @@ def canonical_name(name):
 def runtime_paths():
     return {name: str(RUNTIME / "venvs" / (
         "grid" if name in ("babyai", "babaisai") else
-        "nle" if name in ("minihack", "nle") else
-        "alfworld" if name == "alfworld" else "crafter") / "bin/python")
+        "alfworld" if name == "alfworld" else "nle") / "bin/python")
         for name in BENCHMARKS}
 
 
@@ -78,18 +77,17 @@ def make_cases(name, profile="paper", limit=None, seed_start=SEED_START):
     if type(seed_start) is not int or seed_start < 0:
         raise ValueError("seed_start must be a nonnegative integer")
     tasks = {"babyai": BABYAI_TASKS, "minihack": MINIHACK_TASKS,
-        "babaisai": BABA_TASKS, "crafter": ("default",),
-        "nle": ("NetHackChallenge-v0",)}[name]
+        "babaisai": BABA_TASKS, "nle": ("NetHackChallenge-v0",)}[name]
     repetitions = {"babyai": 25 if profile == "paper" else 10,
         "minihack": 5, "babaisai": 5 if profile == "paper" else 3,
-        "crafter": 10, "nle": 5}[name]
+        "nle": 5}[name]
     rows = []
     # Sharing the seed bank across task types does not expose hidden state.
     for task in tasks:
         for i in range(repetitions):
             seed = seed_start + i
             horizon = (64 if task in ("goto", "pickup") else 128) if name == "babyai" else {
-                "minihack": 100, "babaisai": 100, "crafter": 2000, "nle": 100000}[name]
+                "minihack": 100, "babaisai": 100, "nle": 100000}[name]
             rows.append({"id": f"{name}/{profile}/{task}/{seed}", "environment": name,
                 "task": task, "task_type": task, "seed": seed, "profile": profile,
                 "horizon": horizon, "group": f"{name}/{task}/{seed}",
@@ -406,52 +404,6 @@ class _NLEFamily(_Base):
         return value
 
 
-class _Crafter(_Base):
-    def __init__(self, name, case):
-        super().__init__(name, case)
-        # Importing the official factory establishes Strings before env.py's
-        # standard package imports. The underlying crafter.Env is unmodified.
-        _package()
-        import crafter
-        from balrog.environments.crafter import CrafterLanguageWrapper, ACTION_DICT, get_instruction_prompt
-        self.native = crafter.Env(area=(64, 64), view=(9, 9), size=(256, 256),
-            reward=True, length=10000, seed=case["seed"])
-        self.wrapper = CrafterLanguageWrapper(self.native, max_episode_steps=2000,
-            unique_items=True, precise_location=False, skip_items=[], edge_only_items=[])
-        self.raw = self.wrapper.reset()
-        self._menu(self.wrapper.language_action_space)
-        self.descriptions = {a: ACTION_DICT[a] for a in self.menu}
-        self.native_instruction = get_instruction_prompt()
-        self.mission = self.native_instruction
-        self.reset_native_actions = int(self.native._step)
-        self._project()
-
-    def step(self, action):
-        self._check(action)
-        self.raw, reward, native_done, self.info = self.wrapper.step(action)
-        self.steps += 1
-        self.total_reward += float(reward)
-        native_stats = self.wrapper.get_stats()
-        self.score = float(native_stats["score"])
-        self.won = sum(int(v > 0) for v in (native_stats.get("achievements") or {}).values()) == 22
-        self.done = bool(native_done or self.steps >= self.case["horizon"])
-        self.terminated = bool(self.done and self.info.get("dead", False))
-        self.truncated = bool(self.done and not self.terminated)
-        self._project()
-        return self._result(reward)
-
-    def metrics(self):
-        stats = self.wrapper.get_stats()
-        achievements = deepcopy(stats.get("achievements") or {})
-        count = sum(int(v > 0) for v in achievements.values())
-        return {**super().metrics(), "native_steps": int(self.native._step),
-            "reset_native_actions": self.reset_native_actions, "native_reward": self.total_reward,
-            "score": float(stats["score"]),
-            "progression": float(stats["progression"]), "achievement_count": count,
-            "achievements": achievements, "all_achievements_unlocked": count == 22,
-            "won": count == 22, "dead": bool(self.info.get("dead", False))}
-
-
 class Game:
     """Construct inside the selected benchmark's isolated native runtime."""
     def __init__(self, name, case):
@@ -463,16 +415,16 @@ class Game:
         if name not in BENCHMARKS or canonical_name(case.get("environment")) != name:
             raise ValueError("Case does not match a supported benchmark")
         tasks = {"babyai": BABYAI_TASKS, "minihack": MINIHACK_TASKS,
-            "babaisai": BABA_TASKS, "crafter": ("default",), "nle": ("NetHackChallenge-v0",)}[name]
+            "babaisai": BABA_TASKS, "nle": ("NetHackChallenge-v0",)}[name]
         if case.get("task") not in tasks:
             raise ValueError("Task absent from pinned benchmark bank")
         horizon = (64 if case["task"] in ("goto", "pickup") else 128) if name == "babyai" else {
-            "minihack": 100, "babaisai": 100, "crafter": 2000, "nle": 100000}[name]
+            "minihack": 100, "babaisai": 100, "nle": 100000}[name]
         if case.get("horizon") != horizon or type(case.get("seed")) is not int:
             raise ValueError("Case native horizon or seed differs")
         wrapper_identity()
         cls = {"babyai": _BabyAI, "babaisai": _Baba, "minihack": _NLEFamily,
-            "nle": _NLEFamily, "crafter": _Crafter}[name]
+            "nle": _NLEFamily}[name]
         self._game = cls.__new__(cls)
         try:
             cls.__init__(self._game, name, case)
@@ -493,11 +445,9 @@ class Game:
             return self._game.identity()
         packages = ["numpy", "gym", "gymnasium", "Pillow"]
         packages += {"babyai": ["minigrid"], "babaisai": ["baba"],
-            "minihack": ["minihack", "balrog-nle"], "nle": ["balrog-nle"],
-            "crafter": ["crafter", "scipy", "opensimplex"]}[name]
+            "minihack": ["minihack", "balrog-nle"], "nle": ["balrog-nle"]}[name]
         native_packages = {"babyai": ("minigrid",), "babaisai": ("baba",),
-            "minihack": ("minihack", "nle"), "nle": ("nle",),
-            "crafter": ("crafter",)}[name]
+            "minihack": ("minihack", "nle"), "nle": ("nle",)}[name]
         hashes = {}
         for package in native_packages:
             folder = Path(sys.modules[package].__file__).resolve().parent

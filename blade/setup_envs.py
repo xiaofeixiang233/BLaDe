@@ -20,8 +20,7 @@ import venv
 HERE = Path(__file__).resolve().parent
 LOCK = json.loads((HERE / "upstream.lock.json").read_text())
 GROUPS = {"grid": ("balrog", "minigrid", "baba"),
-    "nle": ("balrog", "balrog_nle", "minihack", "boxoban"),
-    "crafter": ("balrog", "crafter")}
+    "nle": ("balrog", "balrog_nle", "minihack", "boxoban")}
 
 
 def sha(path):
@@ -87,8 +86,6 @@ def install(group, root, sources):
     run([python, "-m", "pip", "install", "-r", HERE / f"requirements-{group}.txt"])
     if group == "grid":
         run([python, "-m", "pip", "install", "--no-build-isolation", "--no-deps", sources["minigrid"], sources["baba"]])
-    elif group == "crafter":
-        run([python, "-m", "pip", "install", "--no-build-isolation", "--no-deps", sources["crafter"]])
     else:
         missing = [name for name in ("gcc", "g++", "make", "flex", "bison") if not shutil.which(name)]
         if missing:
@@ -157,7 +154,7 @@ def main():
     previous_path.write_text(json.dumps(combined, indent=2) + "\n")
     if not args.skip_smoke:
         for group, python in paths.items():
-            for name in {"grid": ("babyai", "babaisai"), "nle": ("minihack",), "crafter": ("crafter",)}[group]:
+            for name in {"grid": ("babyai", "babaisai"), "nle": ("minihack",)}[group]:
                 smoke_one(name, root, python)
     print("Native setup complete; no model calls were made.")
 

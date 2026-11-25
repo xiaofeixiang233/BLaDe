@@ -148,7 +148,8 @@
         }
       },
       "Game.__init__": {
-        "reference_sha256": "a7baa14ef78877b1d285baa1dd95357630d93571adc6a69609fbd92815e992cf",
+        "reference_sha256": "4a1fa20cc98e89cc003908007893eea9fb6659262d15abf573124aa00461273b",
+        "note": "Differs from the observed snapshots only by the removal of the unused Crafter entries.",
         "observed_sha256": {
           "cap2000": "a7baa14ef78877b1d285baa1dd95357630d93571adc6a69609fbd92815e992cf",
           "main_v3": "a7baa14ef78877b1d285baa1dd95357630d93571adc6a69609fbd92815e992cf",

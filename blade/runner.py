@@ -42,7 +42,7 @@ def read_records(path):
 
 def native_python(cfg,name):
     if name in cfg['native_runtimes']:return cfg['native_runtimes'][name]
-    group='grid' if name in ('babyai','babaisai') else 'nle' if name in ('minihack','nle') else 'alfworld' if name=='alfworld' else 'crafter'
+    group='grid' if name in ('babyai','babaisai') else 'alfworld' if name=='alfworld' else 'nle'
     return str(Path(cfg['runtime_root'])/'venvs'/group/'bin/python')
 
 
@@ -50,7 +50,7 @@ def native_identity(name):
     from . import environment
     packages={'babyai':['minigrid','gymnasium','numpy'],'babaisai':['baba','gym','numpy'],
               'minihack':['minihack','nle','gym','numpy'],'nle':['nle','gym','numpy'],
-              'crafter':['crafter','gymnasium','gym','numpy'],'alfworld':['alfworld','textworld','numpy']}[name]
+              'alfworld':['alfworld','textworld','numpy']}[name]
     versions={}
     for p in packages:
         try:versions[p]=importlib.metadata.version(p)
@@ -523,7 +523,7 @@ def main(argv=None):
     parser.add_argument('--plan',choices=['main','ablation'],default='main',help='Template used by init')
     parser.add_argument('--execute',action='store_true',help='Explicitly enable model inference')
     parser.add_argument('--methods',nargs='+',choices=policy.METHODS)
-    parser.add_argument('--environment',choices=['babyai','minihack','babaisai','crafter','alfworld'])
+    parser.add_argument('--environment',choices=['babyai','minihack','babaisai','alfworld'])
     parser.add_argument('--case-index',type=int)
     parser.add_argument('--d3-endpoint')
     parser.add_argument('--kev-endpoint')

@@ -8,24 +8,22 @@ from blade.policy import MAIN_METHODS, effective_decision_cap, goal_slots
 
 class CaseContract(unittest.TestCase):
     def test_v3_native_case_counts_and_caps_without_local_alfworld_data(self):
-        expected = {"babyai": 125, "minihack": 40, "babaisai": 200,
-            "crafter": 10}
-        self.assertEqual(BENCHMARKS, ("babyai", "minihack", "babaisai", "crafter", "alfworld"))
+        expected = {"babyai": 125, "minihack": 40, "babaisai": 200}
+        self.assertEqual(BENCHMARKS, ("babyai", "minihack", "babaisai", "alfworld"))
         self.assertEqual({n: len(make_cases(n)) for n in expected}, expected)
         all_cases = [row for n in expected for row in make_cases(n)]
-        self.assertEqual(len({r["id"] for r in all_cases}), 375)
-        self.assertEqual(len(all_cases) * len(MAIN_METHODS), 3375)
+        self.assertEqual(len({r["id"] for r in all_cases}), 365)
+        self.assertEqual(len(all_cases) * len(MAIN_METHODS), 3285)
         # ALFWorld file enumeration is tested independently by its adapter; this
         # generic offline contract does not require downloading its 134 games.
         from blade.alfworld_adapter import TASK_COUNTS
         self.assertEqual(sum(TASK_COUNTS.values()), 134)
-        self.assertEqual((len(all_cases) + sum(TASK_COUNTS.values())) * len(MAIN_METHODS), 4581)
+        self.assertEqual((len(all_cases) + sum(TASK_COUNTS.values())) * len(MAIN_METHODS), 4491)
         for row in all_cases:
             if row["environment"] == "babyai":
                 self.assertEqual(row["horizon"], 64 if row["task"] in ("goto", "pickup") else 128)
             else:
-                self.assertEqual(row["horizon"], {"minihack": 100, "babaisai": 100,
-                    "crafter": 2000}[row["environment"]])
+                self.assertEqual(row["horizon"], {"minihack": 100, "babaisai": 100}[row["environment"]])
 
     def test_deterministic_and_explicit_small_profile(self):
         for name in BENCHMARKS:
@@ -45,12 +43,10 @@ class CaseContract(unittest.TestCase):
             if name == "alfworld": continue  # Its dynamic-menu cases have a separate contract.
             for case in make_cases(name):
                 frozen=deepcopy(case)
-                expected=min(case['horizon'],2000) if name == 'crafter' else case['horizon']
+                expected=case['horizon']
                 for method in MAIN_METHODS:
                     with self.subTest(environment=name,method=method):
                         self.assertEqual(effective_decision_cap(cfg,case),expected)
-                if name == 'crafter':
-                    self.assertEqual(goal_slots(expected,8),[8,257,506,755,1004,1253,1502,1751])
                 self.assertEqual(case,frozen)
 
 

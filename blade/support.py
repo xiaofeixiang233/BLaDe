@@ -58,7 +58,7 @@ def load_config(path):
     if cfg.get('methods')!=list(METHODS):raise ValueError('The complete v3 method registry is required')
     names=cfg.get('environments')
     if (not isinstance(names,list) or not names or len(set(names))!=len(names)
-            or any(n not in ('babyai','minihack','babaisai','crafter','alfworld') for n in names)):
+            or any(n not in ('babyai','minihack','babaisai','alfworld') for n in names)):
         raise ValueError('Select the five v3 benchmark names')
     if cfg.get('profile') not in ('paper','smoke'):raise ValueError('Use paper or smoke case profile')
     caps=cfg.get('decision_caps')
