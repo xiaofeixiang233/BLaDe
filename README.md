@@ -2,7 +2,7 @@
 
 Code and experiment records for **"Bayesian Language Decision: Looking Back and Planning Ahead"**.
 
-[Paper (PDF, download)](docs/blade-paper.pdf?raw=true) · [Project page](docs/index.html) (a single self-contained HTML file; open it in a browser)
+[Paper (PDF, download)](docs/blade-paper.pdf?raw=true) · [Project page](https://xiaofeixiang233.github.io/BLaDe/)
 
 BLaDe is a training-free way to pair a fast System I actor with a slow System II planner.
 One frozen actor is queried under three contexts and the answers are combined with a single weight `w`:
