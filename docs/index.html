@@ -31,22 +31,6 @@
   --hist-bg:#13233F; --plan-bg:#2C2012; --act-bg:#0F2A22;
   --screen:#060B14; --screen-line:#18243A; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -18px rgba(0,0,0,.8); color-scheme:dark }
 
-/* Alternative palettes, each drawn from one painter. Series colors (history / plan / BLaDe) were snapped to the nearest values that pass the lightness, chroma, color-vision and contrast checks. */
-:root[data-palette="hokusai"]{--bg:#F1EADA;--surface:#FBF6EA;--sunken:#E6DDC8;--ink:#14253D;--ink2:#45546A;--muted:#7D8793;--line:#D8CDB6;--base:#9DA3A6;--hist:#255492;--plan:#CC5B14;--act:#06805F;--bad:#A82A2A;--hist-bg:color-mix(in srgb,var(--hist) 13%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 13%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 13%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))}
-@media (prefers-color-scheme: dark){ :root[data-palette="hokusai"]:not([data-theme="light"]){--bg:#0E1726;--surface:#162236;--sunken:#0B121E;--ink:#EFE7D4;--ink2:#B9B6A8;--muted:#7F8794;--line:#25344D;--base:#66728A;--hist:#5B8FD6;--plan:#CC783F;--act:#28AC92;--bad:#D05A5A;--hist-bg:color-mix(in srgb,var(--hist) 22%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 22%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 22%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))} }
-:root[data-palette="hokusai"][data-theme="dark"]{--bg:#0E1726;--surface:#162236;--sunken:#0B121E;--ink:#EFE7D4;--ink2:#B9B6A8;--muted:#7F8794;--line:#25344D;--base:#66728A;--hist:#5B8FD6;--plan:#CC783F;--act:#28AC92;--bad:#D05A5A;--hist-bg:color-mix(in srgb,var(--hist) 22%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 22%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 22%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))}
-:root[data-palette="vangogh"]{--bg:#F4EFDD;--surface:#FCF8EA;--sunken:#E8E1C8;--ink:#152A52;--ink2:#46557A;--muted:#7C849A;--line:#DAD2B8;--base:#A0A39A;--hist:#2B55A8;--plan:#C27F00;--act:#537311;--bad:#C0392B;--hist-bg:color-mix(in srgb,var(--hist) 13%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 13%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 13%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))}
-@media (prefers-color-scheme: dark){ :root[data-palette="vangogh"]:not([data-theme="light"]){--bg:#0B1430;--surface:#131F45;--sunken:#080F26;--ink:#F2E9C9;--ink2:#B8B7A6;--muted:#7C84A0;--line:#233262;--base:#636E94;--hist:#5B82D8;--plan:#C27F0D;--act:#5BA66B;--bad:#E06A6A;--hist-bg:color-mix(in srgb,var(--hist) 22%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 22%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 22%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))} }
-:root[data-palette="vangogh"][data-theme="dark"]{--bg:#0B1430;--surface:#131F45;--sunken:#080F26;--ink:#F2E9C9;--ink2:#B8B7A6;--muted:#7C84A0;--line:#233262;--base:#636E94;--hist:#5B82D8;--plan:#C27F0D;--act:#5BA66B;--bad:#E06A6A;--hist-bg:color-mix(in srgb,var(--hist) 22%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 22%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 22%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))}
-:root[data-palette="monet"]{--bg:#F0F3F1;--surface:#FBFCFA;--sunken:#E4EAE8;--ink:#243245;--ink2:#4C5A6B;--muted:#7B8794;--line:#D5DDDC;--base:#9BA6AE;--hist:#5B6FB5;--plan:#DB575B;--act:#07937A;--bad:#8E2F45;--hist-bg:color-mix(in srgb,var(--hist) 13%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 13%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 13%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))}
-@media (prefers-color-scheme: dark){ :root[data-palette="monet"]:not([data-theme="light"]){--bg:#121A22;--surface:#1A2530;--sunken:#0E151C;--ink:#E8EDEA;--ink2:#AEB9BD;--muted:#7A8891;--line:#283642;--base:#66747E;--hist:#7388D0;--plan:#EA5C69;--act:#2FA08C;--bad:#B04A78;--hist-bg:color-mix(in srgb,var(--hist) 22%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 22%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 22%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))} }
-:root[data-palette="monet"][data-theme="dark"]{--bg:#121A22;--surface:#1A2530;--sunken:#0E151C;--ink:#E8EDEA;--ink2:#AEB9BD;--muted:#7A8891;--line:#283642;--base:#66747E;--hist:#7388D0;--plan:#EA5C69;--act:#2FA08C;--bad:#B04A78;--hist-bg:color-mix(in srgb,var(--hist) 22%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 22%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 22%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))}
-:root[data-palette="matisse"]{--bg:#FBF4E6;--surface:#FFFBF2;--sunken:#F0E7D4;--ink:#141C3A;--ink2:#454D6B;--muted:#7F8598;--line:#E2D8C2;--base:#A3A49C;--hist:#2348A6;--plan:#E14900;--act:#1F8A4C;--bad:#A3123A;--hist-bg:color-mix(in srgb,var(--hist) 13%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 13%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 13%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))}
-@media (prefers-color-scheme: dark){ :root[data-palette="matisse"]:not([data-theme="light"]){--bg:#0F1424;--surface:#171E33;--sunken:#0B0F1C;--ink:#F5EEDD;--ink2:#B9B8B0;--muted:#80879A;--line:#262F4A;--base:#66708C;--hist:#5C82E6;--plan:#EA662B;--act:#02B078;--bad:#D0486A;--hist-bg:color-mix(in srgb,var(--hist) 22%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 22%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 22%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))} }
-:root[data-palette="matisse"][data-theme="dark"]{--bg:#0F1424;--surface:#171E33;--sunken:#0B0F1C;--ink:#F5EEDD;--ink2:#B9B8B0;--muted:#80879A;--line:#262F4A;--base:#66708C;--hist:#5C82E6;--plan:#EA662B;--act:#02B078;--bad:#D0486A;--hist-bg:color-mix(in srgb,var(--hist) 22%,var(--surface));--plan-bg:color-mix(in srgb,var(--plan) 22%,var(--surface));--act-bg:color-mix(in srgb,var(--act) 22%,var(--surface));--act-soft:color-mix(in srgb,var(--act) 45%,var(--surface))}
-.pal{display:flex;align-items:center;gap:6px;font:500 12px/1 var(--mono);color:var(--muted);flex:none}
-.pal select{font:500 12px/1 var(--mono);color:var(--ink2);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 6px;cursor:pointer}
-@media (max-width:640px){.pal span{display:none}}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -81,14 +65,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* the blade: slides in behind the letters once the title has formed */
 .hero h1 .tw{position:relative;display:inline-block}
 .hero h1 .t{position:relative;z-index:1;display:inline-block}
-.sword{position:absolute;z-index:0;left:-1.3em;right:-.6em;top:50%;height:.95em;display:flex;align-items:center;pointer-events:none;transform:translate(0,-50%)}
+.sword{position:absolute;z-index:0;left:-1.55em;right:-.6em;top:50%;height:.95em;display:flex;align-items:center;pointer-events:none;transform:translate(0,-50%)}
 .sword svg{height:100%;width:auto;flex:none;display:block}
 .sword i{position:relative;overflow:hidden;flex:1;height:.26em;margin-left:-1px;
   background:linear-gradient(180deg,color-mix(in srgb,var(--base) 45%,var(--bg)) 0 42%,var(--base) 42% 58%,color-mix(in srgb,var(--base) 72%,var(--bg)) 58%);
   clip-path:polygon(0 0,calc(100% - .75em) 0,100% 50%,calc(100% - .75em) 100%,0 100%)}
 .sword i::after{content:"";position:absolute;top:0;bottom:0;left:0;width:22%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.95),transparent);transform:translateX(-120%)}
 .sword::before{content:"";position:absolute;right:calc(100% - .2em);top:50%;width:70%;height:.26em;transform:translateY(-50%);background:linear-gradient(90deg,transparent,var(--base));opacity:0}
-.sword::after{content:"";position:absolute;left:.95em;top:50%;width:3.2em;height:3.2em;margin:-1.6em 0 0 -1.6em;border:.06em solid var(--act);border-radius:50%;opacity:0;transform:scale(.15)}
+.sword::after{content:"";position:absolute;left:.95em;top:50%;width:3.2em;height:3.2em;margin:-1.6em 0 0 -1.6em;border:.06em solid var(--base);border-radius:50%;opacity:0;transform:scale(.15)}
 .intro-pending .sword{transform:translate(-140%,-50%);opacity:0}
 /* the strike: accelerate in, stop dead with a small recoil, then shock ring, jolt of the letters and a glint */
 .tw.strike .sword{animation:sw-thrust .46s linear .3s both}
@@ -103,7 +87,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @keyframes sw-glint{0%{transform:translateX(-120%)}100%{transform:translateX(560%)}}
 @keyframes sw-jolt{0%{transform:none}14%{transform:translateX(.1em) skewX(-5deg)}34%{transform:translateX(-.05em) skewX(2deg)}56%{transform:translateX(.025em)}78%{transform:translateX(-.01em)}100%{transform:none}}
 .hero-sub{font:400 clamp(20px,3vw,34px)/1.15 var(--display);color:var(--ink2);margin-top:16px;letter-spacing:-.01em}
-.hero .lede{margin:28px auto 0;max-width:60ch}
+.tldr{margin:30px auto 0;max-width:800px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 26px 20px;box-shadow:0 10px 30px -18px rgba(10,20,40,.35)}
+.tldr .tag{display:inline-block;font:600 12px/1 var(--mono);letter-spacing:.1em;color:var(--act);background:var(--act-bg);padding:6px 9px;border-radius:6px}
+.tldr p{margin-top:12px;font-size:clamp(17px,1.9vw,20px);line-height:1.6;color:var(--ink)}
+.tldr p b{font-weight:600}.tldr .ch{color:var(--hist)}.tldr .cp{color:var(--plan)}
+.tldr-eq{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);text-align:center;font:500 clamp(18px,2.4vw,24px)/1.4 var(--mono);overflow-x:auto;white-space:nowrap}
+.tex .h{color:var(--hist);fill:var(--hist);stroke:var(--hist)}.tex .p{color:var(--plan);fill:var(--plan);stroke:var(--plan)}.tex .q{color:var(--act);fill:var(--act);stroke:var(--act)}
+.tex mjx-container{margin:0!important}
+.eq mjx-container .lit{filter:drop-shadow(0 0 6px currentColor)}
 .hero .cta{justify-content:center}
 /* intro: text stays hidden until the dots have formed the title, then rises in one piece after another */
 .rv{transition:opacity 1.1s ease var(--d,0s),transform 1.1s ease var(--d,0s)}
@@ -400,20 +391,22 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mute
 <body>
 
 <div class="nav"><div class="wrap">
-  <a class="brand" href="#top">BLaDe<i>.</i></a>
+  <a class="brand" href="#top">BLaDe</a>
   <nav><a href="#replays">Replays</a><a href="#method">Method</a><a href="#results">Results</a></nav>
-  <label class="pal"><span>Palette</span><select id="palSel" aria-label="Color palette"><option value="">Original</option><option value="hokusai">Hokusai</option><option value="vangogh">Van Gogh</option><option value="monet">Monet</option><option value="matisse">Matisse</option></select></label>
 </div></div>
 
-<script>try{var bp=localStorage.getItem('blade-palette');if(bp)document.documentElement.setAttribute('data-palette',bp)}catch(e){}
-try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&location.hash!=='#static'){document.documentElement.classList.add('intro-pending');setTimeout(function(){document.documentElement.classList.remove('intro-pending')},20000)}}catch(e){}</script>
+<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&location.hash!=='#static'){document.documentElement.classList.add('intro-pending');setTimeout(function(){document.documentElement.classList.remove('intro-pending')},20000)}}catch(e){}</script>
 <header class="hero" id="top">
   <canvas class="hero-bg" id="heroBg" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="eyebrow rv">Training-free guidance for System I decision models</div>
-    <h1><span class="tw"><span class="sword" aria-hidden="true"><svg viewBox="0 0 70 50"><circle cx="7" cy="25" r="5.5" fill="var(--act)"/><rect x="11" y="20.5" width="35" height="9" rx="3" fill="var(--ink)"/><rect x="45" y="4" width="8" height="42" rx="4" fill="var(--act)"/><rect x="53" y="18.2" width="17" height="13.6" fill="var(--base)"/></svg><i></i></span><span class="t"><b>B</b>ayesian</span> <span class="t"><b>La</b>nguage</span> <span class="t"><b>De</b>cision</span></span></h1>
+    <h1><span class="tw"><span class="sword" aria-hidden="true"><svg viewBox="0 0 70 50"><circle cx="8" cy="25" r="5" fill="var(--base)" stroke="var(--muted)" stroke-width="1.5"/><rect x="12" y="21" width="34" height="8" rx="2.5" fill="var(--muted)"/><path d="M20 21v8M27 21v8M34 21v8M41 21v8" stroke="var(--bg)" stroke-width="1.6" opacity=".7"/><path d="M45 9Q54 25 45 41L50 41Q61 25 50 9Z" fill="var(--muted)"/><rect x="54" y="18.2" width="16" height="13.6" fill="var(--base)"/></svg><i></i></span><span class="t"><b>B</b>ayesian</span> <span class="t"><b>La</b>nguage</span> <span class="t"><b>De</b>cision</span></span></h1>
     <p class="hero-sub rv" style="--d:.15s">Looking Back and Planning Ahead</p>
-    <p class="lede rv" style="--d:.55s">A fast actor chooses every action; a slow planner speaks only now and then. <b>BLaDe</b> asks the same frozen actor three questions at each step and combines the answers with Bayes' rule, so recent experience sets the prior and the planner's desired future pulls on it with one weight, <span class="mono">w</span>.</p>
+    <div class="tldr rv" style="--d:.5s">
+      <span class="tag">TL;DR</span>
+      <p>Ask one frozen fast actor <b>three questions</b> at every step: what it would do from the observation alone, with its <b class="ch">recent history</b>, and with the <b class="cp">planner's target</b>. Bayes' rule combines the answers. History is the prior, the plan is the evidence, and a single weight <span class="tex" data-tex="w">w</span> sets how hard the plan pulls. No training and no extra network.</p>
+      <div class="tldr-eq tex" data-tex="\class{q}{\tilde\pi_w(a)}\;\propto\;\class{h}{\pi_h(a)}\cdot\left(\dfrac{\class{p}{\pi_p(a)}}{\pi_0(a)}\right)^{\!w}">π̃<sub>w</sub>(a) ∝ π<sub>h</sub>(a) · (π<sub>p</sub>(a) / π<sub>0</sub>(a))<sup>w</sup></div>
+    </div>
     <p class="authors rv" style="--d:.95s">Haicheng Huang<sup>*</sup>, Lang Lin<sup>*</sup>, Xinyang Liu<sup>*</sup>, Yanbo Wang, Tianyu Chen, Ruyi An, Mingyuan Zhou<sup>†</sup></p>
     <p class="affil rv" style="--d:1.1s">The University of Texas at Austin · <sup>*</sup>equal contribution · <sup>†</sup>corresponding author</p>
     <div class="cta rv" style="--d:1.35s">
@@ -460,12 +453,12 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&location.hash!==
     <p>Scoring how likely each action is to reach the planner's target would need a world model. Under a simple factorization, Bayes' rule turns that likelihood into a ratio of action probabilities the actor already returns.</p>
   </div>
   <div class="steps3" id="steps3">
-    <div class="card step s-h"><div class="tag">Look back</div><h3>History sets the prior</h3><p>The actor reads the observation plus the last four real action–outcome pairs. This is what it would do given what just happened.</p><div class="f">π<sub>h</sub>(a) = π(a | o<sub>t</sub>, h<sub>t</sub>)</div><div class="mini" data-k="h"></div></div>
-    <div class="card step s-p"><div class="tag">Plan ahead</div><h3>The target adds evidence</h3><p>A System II planner proposes a desired future state at most four times per episode. Dividing by the observation-only view keeps just the shift the target causes.</p><div class="f">π<sub>p</sub>(a) / π<sub>0</sub>(a)</div><div class="mini" data-k="r"></div></div>
-    <div class="card step s-q"><div class="tag">Compose</div><h3>One weight, then act</h3><p>The ratio is raised to w and multiplied into the prior. w = 0 ignores the plan; larger w lets the plan override the past. The top action is executed once.</p><div class="f">a<sub>t</sub> = argmax π̃<sub>w</sub>(a)</div><div class="mini" data-k="q"></div></div>
+    <div class="card step s-h"><div class="tag">Look back</div><h3>History sets the prior</h3><p>The actor reads the observation plus the last four real action–outcome pairs. This is what it would do given what just happened.</p><div class="f tex" data-tex="\pi_h(a)=\pi(a\mid o_t,h_t)">π<sub>h</sub>(a) = π(a | o<sub>t</sub>, h<sub>t</sub>)</div><div class="mini" data-k="h"></div></div>
+    <div class="card step s-p"><div class="tag">Plan ahead</div><h3>The target adds evidence</h3><p>A System II planner proposes a desired future state at most four times per episode. Dividing by the observation-only view keeps just the shift the target causes.</p><div class="f tex" data-tex="\dfrac{\pi_p(a)}{\pi_0(a)}=\dfrac{\pi(a\mid o_t,p_t)}{\pi(a\mid o_t)}">π<sub>p</sub>(a) / π<sub>0</sub>(a)</div><div class="mini" data-k="r"></div></div>
+    <div class="card step s-q"><div class="tag">Compose</div><h3>One weight, then act</h3><p>The ratio is raised to w and multiplied into the prior. w = 0 ignores the plan; larger w lets the plan override the past. The top action is executed once.</p><div class="f tex" data-tex="a_t=\arg\max_a\,\tilde\pi_w(a)">a<sub>t</sub> = argmax π̃<sub>w</sub>(a)</div><div class="mini" data-k="q"></div></div>
   </div>
   <p class="mini-note" id="miniNote"></p>
-  <div class="card eq" aria-label="BLaDe composition rule">
+  <div class="card eq tex" aria-label="BLaDe composition rule" data-tex="\class{q}{\tilde\pi_w(a)}\;\propto\;\class{h}{\pi(a\mid o_t,h_t)}\cdot\left[\class{frac}{\dfrac{\class{p}{\pi(a\mid o_t,p_t)}}{\pi(a\mid o_t)}}\right]^{\!w}">
     <span class="q">π̃<sub>w</sub>(a)</span> <span class="z">∝</span> <span class="h">π(a | o<sub>t</sub>, h<sub>t</sub>)</span> <span class="z">·</span> <span class="z">[</span><span class="frac"><span class="p">π(a | o<sub>t</sub>, p<sub>t</sub>)</span><span>π(a | o<sub>t</sub>)</span></span><span class="z">]</span><sup>w</sup>
   </div>
 
@@ -475,8 +468,8 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&location.hash!==
       <div class="seg sm" id="labTabs" role="group" aria-label="Logged decision" style="margin-top:12px"></div>
       <dl>
         <div><dt>Task</dt><dd id="labTask" class="mono"></dd></div>
-        <div><dt>Last four interactions (h<sub>t</sub>)</dt><dd><div class="hist-list" id="labHist"></div></dd></div>
-        <div><dt>Planner's desired future (p<sub>t</sub>)</dt><dd><div class="goal" style="margin:0"><p id="labGoal"></p></div></dd></div>
+        <div><dt>Last four interactions (<span class="tex" data-tex="h_t">h<sub>t</sub></span>)</dt><dd><div class="hist-list" id="labHist"></div></dd></div>
+        <div><dt>Planner's desired future (<span class="tex" data-tex="p_t">p<sub>t</sub></span>)</dt><dd><div class="goal" style="margin:0"><p id="labGoal"></p></div></dd></div>
       </dl>
     </div>
     <div class="lab-r">
@@ -1058,12 +1051,6 @@ lineChart($('#histChart'), {W:420, H:230, xs:[0, 4, 8, 12], ys:[13.6, 54.4, 60.0
   if (root.classList.contains('intro-pending')) { if (RM || !W) root.classList.remove('intro-pending'); else startIntro(); }
 })();
 
-/* ---------- palette switcher ---------- */
-(function(){ const sel = $('#palSel'), root = document.documentElement; if (!sel) return;
-  sel.value = root.getAttribute('data-palette') || ''; if (sel.selectedIndex < 0) { sel.value = ''; root.removeAttribute('data-palette'); }
-  sel.addEventListener('change', () => { if (sel.value) root.setAttribute('data-palette', sel.value); else root.removeAttribute('data-palette');
-    try { if (sel.value) localStorage.setItem('blade-palette', sel.value); else localStorage.removeItem('blade-palette'); } catch (e) {} }); })();
-
 /* ---------- copy ---------- */
 })();
 </script>
@@ -1115,6 +1102,19 @@ lineChart($('#histChart'), {W:420, H:230, xs:[0, 4, 8, 12], ys:[13.6, 54.4, 60.0
   document.getElementById('pdfvX').addEventListener('click',close);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!v.hidden) close(); });
 })();
+</script>
+
+<script>
+/* ---------- LaTeX rendering: each .tex element keeps an HTML fallback and is replaced once MathJax loads ---------- */
+window.MathJax = { svg: { fontCache: 'none' }, options: { enableMenu: false }, startup: { typeset: false, ready: function(){
+  MathJax.startup.defaultReady();
+  try { document.head.appendChild(MathJax.svgStylesheet()); } catch (e) {}
+  document.querySelectorAll('.tex[data-tex]').forEach(function(el){
+    try { var n = MathJax.tex2svg(el.getAttribute('data-tex'), { display: false }); el.textContent = ''; el.appendChild(n); } catch (e) {}
+  });
+} } };
+(function(){ var sc = document.createElement('script'); sc.async = true;
+  sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg-full.min.js'; document.head.appendChild(sc); })();
 </script>
 
 </body>
